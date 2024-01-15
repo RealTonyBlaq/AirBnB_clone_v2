@@ -126,6 +126,7 @@ class HBNBCommand(cmd.Cmd):
         if len(params) > 1:
             for i in range(1, len(params) - 1):
                 item = params[i].split('=')
+                
                 if '_' in item[1]:
                     item[1] = item[1].replace('_', ' ')
                 kwargs[item[0]] = item[1]
