@@ -126,9 +126,9 @@ class HBNBCommand(cmd.Cmd):
         for i in range(1, len(params) - 1):
             item = params[i].split("=")
             if '_' in item[1]:
-                item[1item[1].replace('_', ' ')
+                item[1] = item[1].replace('_', ' ')
             my_dict[item[0]] = item[1]
-        new_instance = HBNBCommand.classes[params[0]]()
+        new_instance = HBNBCommand.classes[params[0]](**my_dict)
         storage.save()
         print(new_instance.id)
         storage.save()
