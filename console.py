@@ -125,7 +125,8 @@ class HBNBCommand(cmd.Cmd):
             return
         for i in range(1, len(params) - 1):
             item = params[i].split("=")
-            my_dict(item[0]) = item[1]
+            if 
+            my_dict[item[0]] = item[1]
         new_instance = HBNBCommand.classes[params[0]]()
         storage.save()
         print(new_instance.id)
