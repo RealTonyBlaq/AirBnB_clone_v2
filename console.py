@@ -123,7 +123,8 @@ class HBNBCommand(cmd.Cmd):
             return
         if kwargs:
             my_dict = {}
-            for key, value
+            for key, value in kwargs:
+                
         new_instance = HBNBCommand.classes[args]()
         storage.save()
         print(new_instance.id)
