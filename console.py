@@ -129,9 +129,12 @@ class HBNBCommand(cmd.Cmd):
                 if '_' in item[1]:
                     item[1] = item[1].replace('_', ' ')
                 kwargs[item[0]] = item[1]
+            print()
+            print(kwargs)
+            print()
         else:
-            my_dict = None
-        new_instance = HBNBCommand.classes[params[0]](**my_dict)
+            kwargs = None
+        new_instance = HBNBCommand.classes[params[0]](**kwargs)
         storage.save()
         print(new_instance.id)
         storage.save()
