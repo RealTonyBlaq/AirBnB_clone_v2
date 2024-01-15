@@ -119,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         elif args not in HBNBCommand.classes:
-            print("** class doesn't exist **")
+            print("** class doesn't exist  **")
             return
         if kwargs:
             my_dict = {}
