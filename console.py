@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
                 if item[1].isdigit():
                     item[1] = int(item[1])
                 else:
-                    item[1] = item[1].replace('_', ' ')
+                    item[1] = item[1].replace('_', ' ').replace('\')
                     if '.' in item[1]:
                         try:
                             item[1] = float(item[1])
