@@ -126,11 +126,11 @@ class HBNBCommand(cmd.Cmd):
         if len(params) > 1:
             for i in range(1, len(params) - 1):
                 item = params[i].partition('=')
-                if '_' in item[1]:
+                """if '_' in item[1]:
                     item[1] = item[1].replace('_', ' ')
                 kwargs[item[0]] = item[1]
                 """
-                print(params[)
+                print("{}: {}".format(item[0], item[1]))
         else:
             kwargs = None
         new_instance = HBNBCommand.classes[params[0]]()
