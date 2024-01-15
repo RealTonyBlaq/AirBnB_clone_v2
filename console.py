@@ -126,13 +126,17 @@ class HBNBCommand(cmd.Cmd):
         if len(params) > 1:
             for i in range(1, len(params) - 1):
                 item = params[i].split('=')
-                
-                if '_' in item[1]:
+                if item[1].isdigit():
+                    item[1] = int(item[1])
+                else:
                     item[1] = item[1].replace('_', ' ')
+                    if '.' in item[1]:
+                        try:
+                            item[1] = float(item[1])
+                        except ValueError:
+                            pass
                 kwargs[item[0]] = item[1]
-                
                 print("{}: {} - ({})".format(item[0], item[1], type(item[1])))
-            print(kwargs)
         else:
             kwargs = None
         new_instance = HBNBCommand.classes[params[0]]()
