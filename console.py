@@ -119,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
         params = args[:].split()
-        my_dict = {}
+        kwargs = {}
         if params[0] not in HBNBCommand.classes:
             print("** class doesn't exist  **")
             return
@@ -128,8 +128,9 @@ class HBNBCommand(cmd.Cmd):
                 item = params[i].split("=")
                 if '_' in item[1]:
                     item[1] = item[1].replace('_', ' ')
-                my_dict[item[0]] = item[1]
-        else
+                kwargs[item[0]] = item[1]
+        else:
+            my_dict = None
         new_instance = HBNBCommand.classes[params[0]](**my_dict)
         storage.save()
         print(new_instance.id)
