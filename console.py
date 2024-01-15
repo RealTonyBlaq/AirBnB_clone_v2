@@ -123,6 +123,7 @@ class HBNBCommand(cmd.Cmd):
         if params[0] not in HBNBCommand.classes:
             print("** class doesn't exist  **")
             return
+        if len(params) > 1:
         for i in range(1, len(params) - 1):
             item = params[i].split("=")
             if '_' in item[1]:
