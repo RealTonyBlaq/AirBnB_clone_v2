@@ -137,7 +137,7 @@ class HBNBCommand(cmd.Cmd):
                         except ValueError:
                             pass
                 kwargs[item[0]] = item[1]
-            kwargs['created_at'] = str(datetime.now())
+            kwargs['created_at'] = str(datetime.now()
             kwargs['updated_at'] = str(datetime.now())
         else:
             kwargs = None
