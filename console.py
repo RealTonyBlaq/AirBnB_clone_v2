@@ -125,16 +125,15 @@ class HBNBCommand(cmd.Cmd):
             return
         if len(params) > 1:
             for i in range(1, len(params) - 1):
-                item = params[i].partition('=')
+                """item = params[i].partition('=')
                 if '_' in item[1]:
                     item[1] = item[1].replace('_', ' ')
                 kwargs[item[0]] = item[1]
-            print()
-            print(kwargs)
-            print()
+                """
+            print(params[i])
         else:
             kwargs = None
-        new_instance = HBNBCommand.classes[params[0]](**kwargs)
+        new_instance = HBNBCommand.classes[params[0]]()
         storage.save()
         print(new_instance.id)
         storage.save()
