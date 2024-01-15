@@ -129,13 +129,14 @@ class HBNBCommand(cmd.Cmd):
                 if item[1].isdigit():
                     item[1] = int(item[1])
                 else:
-                    item[1] = item[1].replace('_', ' ').replace("\"", '')
+                    item[1] = item[1].replace('_', ' ').replace("\"", '"')
                     if '.' in item[1]:
                         try:
                             item[1] = float(item[1])
                         except ValueError:
                             pass
                 kwargs[item[0]] = item[1]
+                print("{}: {} - ({})".format(item[0], item[1], type(item[1])))
         else:
             kwargs = None
         new_instance = HBNBCommand.classes[params[0]]()
