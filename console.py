@@ -131,6 +131,7 @@ class HBNBCommand(cmd.Cmd):
                 kwargs[item[0]] = item[1]
                 
                 print("{}: {} - ({})".format(item[0], item[1], type(item[1])))
+            print(kwargs)
         else:
             kwargs = None
         new_instance = HBNBCommand.classes[params[0]]()
