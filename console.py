@@ -34,7 +34,7 @@ class HBNBCommand(cmd.Cmd):
     def preloop(self):
         """Prints if isatty is false"""
         if not sys.__stdin__.isatty():
-            print('(hbnb)')
+            print('(hbnb) ', end='')
 
     def precmd(self, line):
         """Reformat command line for advanced command syntax.
@@ -74,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
                 pline = pline[2].strip()  # pline is now str
                 if pline:
                     # check for *args or **kwargs
-                    if pline[0] is '{' and pline[-1] is'}'\
+                    if pline[0] == '{' and pline[-1] == '}'\
                             and type(eval(pline)) is dict:
                         _args = pline
                     else:
@@ -125,24 +125,22 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist  **")
             return
         if len(params) > 1:
-            for i in range(1, len(params) - 1):
+            for i in range(1, len(params)):
                 item = params[i].split('=')
                 if item[1].isdigit():
                     item[1] = int(item[1])
                 else:
-                    item[1] = item[1].replace('_', ' ').replace('\\"', '"')
+                    item[1] = item[1].replace('_', ' ').replace('"', '')
                     if '.' in item[1]:
                         try:
                             item[1] = float(item[1])
                         except ValueError:
                             pass
                 kwargs[item[0]] = item[1]
-            kwargs['created_at'] = str(datetime.now()
-            kwargs['updated_at'] = str(datetime.now())
-        else:
-            kwargs = None
-        new_instance = HBNBCommand.classes[params[0]](**kwargs)
+        new_instance = HBNBCommand.classes[params[0]]()
         storage.save()
+        for k, v in kwargs.items():
+            setattr(new_instance, k, v)
         print(new_instance.id)
         storage.save()
 
@@ -207,7 +205,7 @@ class HBNBCommand(cmd.Cmd):
         key = c_name + "." + c_id
 
         try:
-            del(storage.all()[key])
+            del (storage.all()[key])
             storage.save()
         except KeyError:
             print("** no instance found **")
@@ -219,7 +217,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """ Shows all objects, or all objects of a class"""
-        print_list = []
+        print('[', end='')
 
         if args:
             args = args.split(' ')[0]  # remove possible trailing args
@@ -228,12 +226,12 @@ class HBNBCommand(cmd.Cmd):
                 return
             for k, v in storage._FileStorage__objects.items():
                 if k.split('.')[0] == args:
-                    print_list.append(str(v))
+                    print(v, end='')
         else:
             for k, v in storage._FileStorage__objects.items():
-                print_list.append(str(v))
+                print(v, end='')
 
-        print(print_list)
+        print(']')
 
     def help_all(self):
         """ Help information for the all command """
@@ -292,7 +290,7 @@ class HBNBCommand(cmd.Cmd):
                 args.append(v)
         else:  # isolate args
             args = args[2]
-            if args and args[0] is '\"':  # check for quoted arg
+            if args and args[0] == '\"':  # check for quoted arg
                 second_quote = args.find('\"', 1)
                 att_name = args[1:second_quote]
                 args = args[second_quote + 1:]
@@ -300,10 +298,10 @@ class HBNBCommand(cmd.Cmd):
             args = args.partition(' ')
 
             # if att_name was not quoted arg
-            if not att_name and args[0] is not ' ':
+            if not att_name and args[0] != ' ':
                 att_name = args[0]
             # check for quoted val arg
-            if args[2] and args[2][0] is '\"':
+            if args[2] and args[2][0] == '\"':
                 att_val = args[2][1:args[2].find('\"', 1)]
 
             # if att_val was not quoted arg
@@ -339,6 +337,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the update class """
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
