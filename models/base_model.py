@@ -15,7 +15,7 @@ class BaseModel:
                         default=datetime.utcnow())
     updated_at = Column('updated_at', DateTime, nullable=False,
                         default=datetime.utcnow())
-    
+
     def __init__(self, *args, **kwargs):
         """Instatntiates a new model"""
         if not kwargs or kwargs is None:
@@ -60,3 +60,7 @@ class BaseModel:
             del dictionary['_sa_instance_state']
         return dictionary
 
+    def delete(self):
+        """ Deletes the current instance from storage """
+        from models import storage
+        
