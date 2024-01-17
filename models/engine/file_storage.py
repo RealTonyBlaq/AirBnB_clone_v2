@@ -28,7 +28,7 @@ class FileStorage:
             obj_dict = {}
             for key, value in FileStorage.__objects.items():
                 temp = key.split('.')[0]
-                if temp == str(cls):
+                if temp == cls.__name__:
                     obj_dict[key] = value
             return obj_dict
 
@@ -49,8 +49,8 @@ class FileStorage:
         """ Deletes obj from __objects if it exists """
         if obj is not None:
             key = obj.__class__.__name__ + '.' + obj.id
-            if key in FileStorage.__objects.keys():
-                del FileStorage.__objects[key]
+            if key in self.__objects.keys():
+                del self.__objects[key]
 
     def reload(self):
         """Loads storage dictionary from file"""
