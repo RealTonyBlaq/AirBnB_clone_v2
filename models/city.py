@@ -6,7 +6,7 @@ from sqlalchemy import Column, String, ForeignKey
 
 class City(BaseModel, Base):
     """ The city class, contains state ID and name """
-    __tablename__ = 'cities'
-    state_id = Column('state_id', String(60), ForeignKey('state.id'),
+    __tablename__ = "cities"
+    state_id = Column("state_id", String(60), ForeignKey('states.id'),
                       nullable=False)
-    name = Column('name', String(128), nullable=False)
+    name = Column("name", String(128), nullable=False)
