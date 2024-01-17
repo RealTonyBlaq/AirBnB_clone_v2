@@ -5,7 +5,15 @@ from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 class City(BaseModel, Base):
-    """ Defining the city class """
+    """
+    Defining the city class
+    
+    Class attributes:
+    ----------------
+
+    ___tablename__ (str): Name of the table
+    
+    """
     __tablename__ = "cities"
     state_id = Column("state_id", String(60), ForeignKey('states.id'),
                       nullable=False)
