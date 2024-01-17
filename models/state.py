@@ -16,7 +16,8 @@ class State(BaseModel, Base):
     __tablename__ (str): Name of the table
     name (str): Column in the table with max 128 characters, non-null
     cities: Represents a relationship with the Class City (table -> cities)
-            
+            the reference is named (state) and if a State object is deleted
+            so is its 
     """
     __tablename__ = 'states'
     name = Column('name', String(128), nullable=False)
