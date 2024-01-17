@@ -9,4 +9,6 @@ class State(BaseModel, Base):
     Defining the State class that inherits from BaseModel
     and Base
     """
+    __tablename__ = 'states'
     name = Column('name', String(128), nullable=False)
+
