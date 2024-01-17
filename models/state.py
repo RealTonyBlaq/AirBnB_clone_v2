@@ -14,8 +14,9 @@ class State(BaseModel, Base):
     -----------------
 
     __tablename__ (str): Name of the table
-    name (str): Column in the table with max 128 characters
-    cities: 
+    name (str): Column in the table with max 128 characters, non-null
+    cities: Represents a relationship with the Class City (table -> cities)
+            
     """
     __tablename__ = 'states'
     name = Column('name', String(128), nullable=False)
