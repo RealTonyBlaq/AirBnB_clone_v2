@@ -5,5 +5,8 @@ from sqlalchemy import String, Column
 
 
 class State(BaseModel, Base):
-    """ Defining the State class that inherits from BaseModel"""
-    name = ""
+    """
+    Defining the State class that inherits from BaseModel
+    and Base
+    """
+    name = Column('name', String(128), nullable=False)
