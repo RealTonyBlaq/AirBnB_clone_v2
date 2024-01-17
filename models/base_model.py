@@ -4,6 +4,7 @@ import uuid
 from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime
+from models import storage
 
 Base = declarative_base()
 
@@ -19,11 +20,9 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """Instatntiates a new model"""
         if not kwargs or kwargs is None:
-            from models import storage
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            storage.new(self)
         else:
             if 'updated_at' in kwargs.keys():
                 kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
