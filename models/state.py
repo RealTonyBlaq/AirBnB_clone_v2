@@ -4,6 +4,6 @@ from models.base_model import BaseModel, Base
 from sqlalchemy import String, Column
 
 
-class State(BaseModel):
-    """ State class """
+class State(BaseModel, Base):
+    """ Defining the State class that inherits from BaseModel"""
     name = ""
