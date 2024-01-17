@@ -12,7 +12,10 @@ class City(BaseModel, Base):
     ----------------
 
     ___tablename__ (str): Name of the table
-    state_id (str): Column with 60 chars, not null and is a 
+    state_id (str): Column with 60 chars, not null and is a
+                    foreign key to states.id
+    name (str): Column with 128 chars, not null
+    states: re
     """
     __tablename__ = "cities"
     state_id = Column("state_id", String(60), ForeignKey('states.id'),
