@@ -9,7 +9,7 @@ class State(BaseModel, Base):
     """
     Defining the State class that inherits from BaseModel
     and Base
-    
+
     class attributes:
     -----------------
 
@@ -17,7 +17,7 @@ class State(BaseModel, Base):
     name (str): Column in the table with max 128 characters, non-null
     cities: Represents a relationship with the Class City (table -> cities)
             the reference is named (state) and if a State object is deleted
-            so is its 
+            so is its City object.
     """
     __tablename__ = 'states'
     name = Column('name', String(128), nullable=False)
