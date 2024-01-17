@@ -15,6 +15,7 @@ class BaseModel:
                         default=datetime.utcnow())
     updated_at = Column('updated_at', DateTime, nullable=False,
                         default=datetime.utcnow())
+    
     def __init__(self, *args, **kwargs):
         """Instatntiates a new model"""
         if not kwargs or kwargs is None:
