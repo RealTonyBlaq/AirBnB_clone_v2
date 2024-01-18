@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """ Module for Database storage """
-from sqlalchemy import 
+from sqlalchemy import create_engine
 
 class DBStorage:
     """ Defining the class DBStorage """
@@ -10,4 +10,4 @@ class DBStorage:
 
     def __init__(self):
         """ Initializing the attributes """
-        self.__engine = 
+        self.__engine = create_engine("mysql://{}:{}@localhost")
