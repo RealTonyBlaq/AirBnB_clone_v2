@@ -10,4 +10,5 @@ class DBStorage:
 
     def __init__(self):
         """ Initializing the attributes """
-        self.__engine = create_engine("mysql://{}:{}@localhost")
+        self.__engine = create_engine("mysql://{}:{}@localhost:3306/{}", pool_pre_ping=True)
+        
