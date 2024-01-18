@@ -10,4 +10,4 @@ class DBStorage:
 
     def __init__(self):
         """ Initializing the attributes """
-        self.__engine = create_engine("mysql://")
+        self.__engine = MySQLdb.connect(host="localhost", user="hbnb_dev", passw)
