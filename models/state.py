@@ -28,4 +28,6 @@ class State(BaseModel, Base):
     @property
     def cities(self):
         """ Returns a list of City instances with state_id = current state.id """
-        
+        objects = storage.all()
+        for key, value in objects.items():
+            
