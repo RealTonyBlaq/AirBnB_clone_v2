@@ -33,4 +33,4 @@ class State(BaseModel, Base):
         for key, value in objects.items():
             obj = key.split('.')[0]
             if obj == "City":
-                if _
+                if 'state_id' in value.keys() and value['state_id']
