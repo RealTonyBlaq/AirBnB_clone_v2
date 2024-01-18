@@ -23,3 +23,7 @@ class State(BaseModel, Base):
     name = Column('name', String(128), nullable=False)
     cities = relationship("City", back_populates="state",
                           cascade="all, delete")
+
+    @cities.getter
+    def cities(self):
+        """ Returns """
