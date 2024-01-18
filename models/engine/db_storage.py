@@ -2,6 +2,7 @@
 
 """ Module for Database storage """
 from sqlalchemy import create_engine
+import os
 
 class DBStorage:
     """ Defining the class DBStorage """
@@ -10,5 +11,5 @@ class DBStorage:
 
     def __init__(self):
         """ Initializing the attributes """
-        self.__engine = create_engine("mysql://{}:{}@localhost:3306/{}", pool_pre_ping=True)
-        
+        self.__engine = create_engine("mysql://{}:{}@localhost:3306/{}".format(),
+                                      pool_pre_ping=True)
