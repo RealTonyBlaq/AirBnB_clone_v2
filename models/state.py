@@ -35,4 +35,4 @@ class State(BaseModel, Base):
             if obj == "City":
                 if 'state_id' in value.keys() and value['state_id'] == self.id:
                     city_instances.append(objects[key])
-        return 
+        return city_instances
