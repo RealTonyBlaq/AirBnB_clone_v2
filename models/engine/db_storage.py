@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """ Module for Database storage """
-from sqlalchemy
+from sqlalchemy import 
 
 class DBStorage:
     """ Defining the class DBStorage """
@@ -10,4 +10,4 @@ class DBStorage:
 
     def __init__(self):
         """ Initializing the attributes """
-        self.__engine = MySQLdb.connect(host="localhost", user="hbnb_dev", passwd="")
+        self.__engine = 
