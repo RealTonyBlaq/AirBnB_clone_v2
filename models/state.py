@@ -30,4 +30,5 @@ class State(BaseModel, Base):
         """ Returns a list of City instances with state_id = current state.id """
         objects = storage.all()
         for key, value in objects.items():
-            obj = key[]
+            obj = key.split('.')[0]
+            if obj == 'City"
