@@ -24,6 +24,7 @@ class State(BaseModel, Base):
     cities = relationship("City", back_populates="state",
                           cascade="all, delete")
 
-    @cities.getter
+    @property
     def cities(self):
-        """ Returns """
+        """ Returns a list of City instances with state_id = current state.id """
+        
