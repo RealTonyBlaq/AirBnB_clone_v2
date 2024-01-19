@@ -23,4 +23,6 @@ class DBStorage:
         if os.environ.get("HBNB_ENV") == "test":
             metadata = MetaData(bind=self.__engine)
             metadata.reflect()
-            metadata.create_all
+            metadata.drop_all()
+
+    
