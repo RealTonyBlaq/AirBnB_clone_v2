@@ -55,3 +55,6 @@ class DBStorage:
                     value = dict(row)
                     objs[key] = value
         return objs
+
+    def new(self, obj):
+        """ Adds a new object to the database """
