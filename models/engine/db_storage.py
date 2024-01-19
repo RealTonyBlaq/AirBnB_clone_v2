@@ -27,4 +27,5 @@ class DBStorage:
 
     def all(self, cls=None):
         """ Queries the current database session """
-        
+        if cls:
+            
