@@ -25,4 +25,6 @@ class DBStorage:
             metadata.reflect()
             metadata.drop_all()
 
-    
+    def all(self, cls=None):
+        """ Queries the current database session """
+        
