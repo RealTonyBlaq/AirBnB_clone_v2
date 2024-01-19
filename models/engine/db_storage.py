@@ -5,7 +5,9 @@ from sqlalchemy import create_engine
 import os
 
 user = os.environ.get("HBNB_MYSQL_USER")
-host = os.environ.get()
+host = os.environ.get("HBNB_MYSQL_HOST")
+passwd = os.environ.get("HBNB_MYSQL_PWD")
+d
 
 
 class DBStorage:
