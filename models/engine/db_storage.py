@@ -22,4 +22,4 @@ class DBStorage:
                                       pool_pre_ping=True)
         if os.environ.get("HBNB_ENV") == "test":
             with self.__engine.connect() as connection:
-                statement = delete
+                statement = delete()
