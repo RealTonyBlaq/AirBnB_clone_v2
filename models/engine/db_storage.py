@@ -12,10 +12,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
-classes = {
-            'BaseModel': BaseModel, 'User': User, 'Place': Place,
-            'State': State, 'City': City, Amenity, Review
-        }
+classes = [BaseModel, User, Place, State, City, Amenity, Review]
 
 user = os.environ.get("HBNB_MYSQL_USER")
 host = os.environ.get("HBNB_MYSQL_HOST")
@@ -50,5 +47,4 @@ class DBStorage:
                 value = dict(row)
                 cls_dict[key] = value
         else:
-
-
+            for class in classes:
