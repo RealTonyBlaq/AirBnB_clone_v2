@@ -14,8 +14,7 @@ from models.review import Review
 
 classes = {
             'BaseModel': BaseModel, 'User': User, 'Place': Place,
-            'State': State, 'City': City, 'Amenity': Amenity,
-            'Review': Review
+            'State': State, 'City': City, Amenity, Review
         }
 
 user = os.environ.get("HBNB_MYSQL_USER")
