@@ -72,4 +72,5 @@ class DBStorage:
             self.__session.delete(obj.__class__)
 
     def reload(self):
-        """ """
+        """ Creates all tables in the database """
+        
