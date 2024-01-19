@@ -20,4 +20,5 @@ class DBStorage:
         self.__engine = create_engine("mysql://{}:{}@{}:3306/{}"
                                       .format(user, passwd, host, database),
                                       pool_pre_ping=True)
-        
+        if os.environ.get("HBNB_ENV") == "test":
+            with self
