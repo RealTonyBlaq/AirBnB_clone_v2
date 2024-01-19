@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """ Module for Database storage """
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, delete
 import os
 
 user = os.environ.get("HBNB_MYSQL_USER")
@@ -21,4 +21,5 @@ class DBStorage:
                                       .format(user, passwd, host, database),
                                       pool_pre_ping=True)
         if os.environ.get("HBNB_ENV") == "test":
-            with self
+            with self.__engine.connect() as connection:
+                statement = delete
