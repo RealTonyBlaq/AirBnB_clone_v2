@@ -51,6 +51,7 @@ class DBStorage:
                 ins = self.__session.query(clas)
                 objs = {}
                 for result in ins:
-                    key = "{}.{}".format(clas.__name__, row.id)
+                    key = "{}.{}".format(clas.__name__, result.id)
                     value = dict(row)
                     objs[key] = value
+        return objs
