@@ -12,6 +12,12 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
+classes = {
+            'BaseModel': BaseModel, 'User': User, 'Place': Place,
+            'State': State, 'City': City, 'Amenity': Amenity,
+            'Review': Review
+        }
+
 user = os.environ.get("HBNB_MYSQL_USER")
 host = os.environ.get("HBNB_MYSQL_HOST")
 passwd = os.environ.get("HBNB_MYSQL_PWD")
