@@ -7,7 +7,7 @@ import os
 user = os.environ.get("HBNB_MYSQL_USER")
 host = os.environ.get("HBNB_MYSQL_HOST")
 passwd = os.environ.get("HBNB_MYSQL_PWD")
-d
+database = os.environ.get("HBNB_MYSQL_DB")
 
 
 class DBStorage:
@@ -17,5 +17,5 @@ class DBStorage:
 
     def __init__(self):
         """ Initializing the attributes """
-        self.__engine = create_engine("mysql://{}:{}@localhost:3306/{}".format(),
+        self.__engine = create_engine("mysql://{}:{}@{}:3306/{}".format(),
                                       pool_pre_ping=True)
