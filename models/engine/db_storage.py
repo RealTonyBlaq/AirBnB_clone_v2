@@ -4,6 +4,13 @@
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 import os
+from models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 user = os.environ.get("HBNB_MYSQL_USER")
 host = os.environ.get("HBNB_MYSQL_HOST")
@@ -38,5 +45,5 @@ class DBStorage:
                 value = dict(row)
                 cls_dict[key] = value
         else:
-            
+
 
