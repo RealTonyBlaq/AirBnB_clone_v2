@@ -31,4 +31,4 @@ class DBStorage:
     def all(self, cls=None):
         """ Queries the current database session """
         if cls:
-            
+            instance = self.__session.query(cls).all()
