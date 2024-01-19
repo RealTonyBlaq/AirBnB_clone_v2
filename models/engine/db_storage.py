@@ -57,4 +57,5 @@ class DBStorage:
         return objs
 
     def new(self, obj):
-        """ Adds a new object to the database """
+        """ Adds a new object to the current database session """
+        
