@@ -3,6 +3,7 @@
 """ Module for Database storage """
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import scoped_session
 import os
 from models.base_model import BaseModel, Base
 from models.user import User
@@ -73,4 +74,4 @@ class DBStorage:
         """ Creates all tables in the database """
         Base.metadata.create_all(self.__engine)
         Session = sessionmaker(self.__engine, expire_on_commit=False)
-        self.__session = Session()
+        self.__session = scoped_session(Session)
