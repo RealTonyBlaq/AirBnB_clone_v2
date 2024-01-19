@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """ Module for Database storage """
-from sqlalchemy import create_engine, delete, drop
+from sqlalchemy import create_engine, MetaData
 import os
 
 user = os.environ.get("HBNB_MYSQL_USER")
