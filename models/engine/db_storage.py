@@ -47,4 +47,5 @@ class DBStorage:
                 value = dict(row)
                 cls_dict[key] = value
         else:
-            for class in classes:
+            for clas in classes:
+                instance
