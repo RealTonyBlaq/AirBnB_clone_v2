@@ -35,5 +35,5 @@ class DBStorage:
             cls_dict = {}
             for row in instance:
                 key = "{}.{}".format(cls.__name__, row.id)
-                k
+                
 
