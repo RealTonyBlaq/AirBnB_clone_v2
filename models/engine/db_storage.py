@@ -4,6 +4,9 @@
 from sqlalchemy import create_engine
 import os
 
+user = os.environ.get
+
+
 class DBStorage:
     """ Defining the class DBStorage """
     __engine = None
