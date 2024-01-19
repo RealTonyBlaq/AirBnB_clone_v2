@@ -33,3 +33,4 @@ class DBStorage:
         if cls:
             instance = self.__session.query(cls)
             cls_dict = {}
+            key = cls.__name__ +
