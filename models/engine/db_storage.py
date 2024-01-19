@@ -49,4 +49,6 @@ class DBStorage:
         else:
             for clas in classes:
                 ins = self.__session.query(clas)
-                all_objs = {}
+                objs = {}
+                for result in ins:
+
