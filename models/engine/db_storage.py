@@ -33,5 +33,7 @@ class DBStorage:
         if cls:
             instance = self.__session.query(cls)
             cls_dict = {}
-            for row
-            key = "{}.{}".format(cls.__name__, row.id)
+            for row in instance:
+                key = "{}.{}".format(cls.__name__, row.id)
+                
+
