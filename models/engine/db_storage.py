@@ -69,3 +69,4 @@ class DBStorage:
     def delete(self, obj=None):
         """ Deletes obj from the current database session """
         if obj:
+            
