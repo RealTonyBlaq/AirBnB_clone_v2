@@ -41,14 +41,14 @@ class DBStorage:
         """ Queries the current database session """
         if cls:
             instance = self.__session.query(cls)
-            cls_dict = {}
+            objs = {}
             for row in instance:
                 key = "{}.{}".format(cls.__name__, row.id)
                 value = dict(row)
-                cls_dict[key] = value
+                objs[key] = value
         else:
             for clas in classes:
                 ins = self.__session.query(clas)
                 objs = {}
                 for result in ins:
-
+                    
