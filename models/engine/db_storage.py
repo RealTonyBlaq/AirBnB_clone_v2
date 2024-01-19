@@ -73,4 +73,4 @@ class DBStorage:
 
     def reload(self):
         """ Creates all tables in the database """
-        
+        Base.metadata.create_all(en)
