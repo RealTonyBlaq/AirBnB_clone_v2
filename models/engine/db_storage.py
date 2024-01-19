@@ -48,4 +48,5 @@ class DBStorage:
                 cls_dict[key] = value
         else:
             for clas in classes:
-                instance
+                ins = self.__session.query(clas)
+                all_objs = {}
