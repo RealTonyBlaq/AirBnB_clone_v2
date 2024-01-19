@@ -21,7 +21,7 @@ class DBStorage:
         self.__engine = create_engine("mysql://{}:{}@{}:3306/{}"
                                       .format(user, passwd, host, database),
                                       pool_pre_ping=True)
-        self.
+        Session = sessionmaker(bind=self.__engine)
         if os.environ.get("HBNB_ENV") == "test":
             metadata = MetaData(bind=self.__engine)
             metadata.reflect()
