@@ -4,7 +4,7 @@
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 import os
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 from models.user import User
 from models.place import Place
 from models.state import State
@@ -71,4 +71,5 @@ class DBStorage:
         if obj:
             self.__session.delete(obj.__class__)
 
-
+    def reload(self):
+        """ """
