@@ -59,4 +59,5 @@ class DBStorage:
     def new(self, obj):
         """ Adds a new object to the current database session """
         if obj:
-            new_obj = obj()
+            new_obj = obj(obj.to_dict())
+            self.
