@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """ Module for Database storage """
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, MetaData, text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
 import os
@@ -13,7 +13,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
-classes = [BaseModel, User, Place, State, City, Amenity, Review]
+classes = [State, City]
 
 user = os.environ.get("HBNB_MYSQL_USER")
 host = os.environ.get("HBNB_MYSQL_HOST")
@@ -43,16 +43,14 @@ class DBStorage:
             objs = {}
             for row in instance:
                 key = "{}.{}".format(cls.__name__, row.id)
-                value = dict(row)
-                objs[key] = value
+                objs[key] = row
         else:
+            objs = {}
             for clas in classes:
                 ins = self.__session.query(clas)
-                objs = {}
                 for result in ins:
                     key = "{}.{}".format(clas.__name__, result.id)
-                    value = dict(row)
-                    objs[key] = value
+                    objs[key] = result
         return objs
 
     def new(self, obj):
@@ -68,7 +66,7 @@ class DBStorage:
     def delete(self, obj=None):
         """ Deletes obj from the current database session """
         if obj:
-            self.__session.delete(obj.__class__)
+            self.__session.delete(obj)
 
     def reload(self):
         """ Creates all tables in the database """
