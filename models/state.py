@@ -3,7 +3,7 @@
 from models.base_model import BaseModel, Base
 from sqlalchemy import String, Column
 from sqlalchemy.orm import relationship
-from models import storage
+from models.city import City
 
 
 class State(BaseModel, Base):
@@ -22,14 +22,15 @@ class State(BaseModel, Base):
     """
     __tablename__ = 'states'
     name = Column('name', String(128), nullable=False)
-    cities = relationship("City", back_populates="state",
-                          cascade="all, delete")
+    cities = relationship("City", backref="state",
+                          cascade="all, delete, delete-orphan")
 
     @property
     def cities(self):
         """
         Returns a list of City instances with state_id = current state.id
         """
+        from models import storage
         objects = storage.all()
         city_instances = []
         for key, value in objects.items():
