@@ -137,10 +137,8 @@ class HBNBCommand(cmd.Cmd):
                         except ValueError:
                             pass
                 kwargs[item[0]] = item[1]
-        new_instance = HBNBCommand.classes[params[0]]()
-        storage.save()
-        for k, v in kwargs.items():
-            setattr(new_instance, k, v)
+        new_instance = HBNBCommand.classes[params[0]](**kwargs)
+        new_instance.save()
         print(new_instance.id)
         storage.save()
 
