@@ -4,7 +4,7 @@
 from sqlalchemy import create_engine, MetaData, text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
-import os
+from os import getenv
 from models.base_model import BaseModel, Base
 from models.user import User
 from models.place import Place
@@ -15,10 +15,10 @@ from models.review import Review
 
 classes = [State, City]
 
-user = os.environ.get("HBNB_MYSQL_USER")
-host = os.environ.get("HBNB_MYSQL_HOST")
-passwd = os.environ.get("HBNB_MYSQL_PWD")
-database = os.environ.get("HBNB_MYSQL_DB")
+user = getenv("HBNB_MYSQL_USER")
+host = getenv("HBNB_MYSQL_HOST")
+passwd = getenv("HBNB_MYSQL_PWD")
+database = getenv("HBNB_MYSQL_DB")
 
 
 class DBStorage:
@@ -31,7 +31,7 @@ class DBStorage:
         self.__engine = create_engine("mysql://{}:{}@{}:3306/{}"
                                       .format(user, passwd, host, database),
                                       pool_pre_ping=True)
-        if os.environ.get("HBNB_ENV") == "test":
+        if getenv("HBNB_ENV") == "test":
             metadata = MetaData(bind=self.__engine)
             metadata.reflect()
             metadata.drop_all()
@@ -55,9 +55,10 @@ class DBStorage:
 
     def new(self, obj):
         """ Adds a new object to the current database session """
+        """if '_sa_instance_state' in obj.__dict__.keys():
+            del obj.__dict__['_sa_instance_state']"""
         if obj:
-            new_obj = obj.__class__(obj.to_dict())
-            self.__session.add(new_obj)
+            self.__session.add(obj)
 
     def save(self):
         """ Commits all changes of the current database session """
@@ -71,5 +72,6 @@ class DBStorage:
     def reload(self):
         """ Creates all tables in the database """
         Base.metadata.create_all(self.__engine)
-        Session = sessionmaker(self.__engine, expire_on_commit=False)
-        self.__session = scoped_session(Session)
+        sess = sessionmaker(bind=self.__engine, expire_on_commit=False)
+        Session = scoped_session(sess)
+        self.__session = Session()
