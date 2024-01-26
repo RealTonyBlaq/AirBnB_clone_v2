@@ -11,8 +11,8 @@ class Place(BaseModel, Base):
     ---------------
     """
     __tablename__ = "places"
-    city_id = Column()
-    user_id = ""
+    city_id = Column("city_id", String(60), ForeignKey("cities.id"), nullable=False)
+    user_id = Column("user_id")
     name = ""
     description = ""
     number_rooms = 0
