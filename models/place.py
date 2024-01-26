@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Place Module for HBNB project """
 from models.base_model import BaseModel, Base
-from sqlalchemy import String, Column, ForeignKey
+from sqlalchemy import String, Column, ForeignKey, Integer
 
 
 class Place(BaseModel, Base):
@@ -15,8 +15,8 @@ class Place(BaseModel, Base):
     user_id = Column("user_id", String(60), ForeignKey("users.id"), nullable=False)
     name = Column("name", String(128), nullable=False)
     description = Column("description", String(1024))
-    number_rooms = 0
-    number_bathrooms = 0
+    number_rooms = Column("number_rooms", Integer, default=0)
+    number_bathrooms = Column("number_bathrooms", Integer, )
     max_guest = 0
     price_by_night = 0
     latitude = 0.0
