@@ -13,7 +13,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
-classes = [State, City, User]
+classes = [State, City, User, Place]
 
 user = getenv("HBNB_MYSQL_USER")
 host = getenv("HBNB_MYSQL_HOST")
