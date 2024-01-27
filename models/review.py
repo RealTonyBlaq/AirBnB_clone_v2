@@ -12,7 +12,9 @@ class Review(BaseModel, Base):
     class attributes:
     =================
 
-    __tablename__
+    __tablename__ (str): Name of the table
+    place_id (str): Foreign key to table places.id
+    user_id (str)
     """
     __tablename__ = "reviews"
     place_id = Column("place_id", String(60), ForeignKey("places.id"), nullable=False)
