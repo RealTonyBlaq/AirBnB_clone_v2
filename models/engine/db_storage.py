@@ -55,8 +55,6 @@ class DBStorage:
 
     def new(self, obj):
         """ Adds a new object to the current database session """
-        """if '_sa_instance_state' in obj.__dict__.keys():
-            del obj.__dict__['_sa_instance_state']"""
         if obj:
             self.__session.add(obj)
 
