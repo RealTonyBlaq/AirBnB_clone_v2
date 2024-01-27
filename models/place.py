@@ -35,5 +35,6 @@ class Place(BaseModel, Base):
         for key, value in storage.all().items():
             obj = key.split('.')[0]
             if obj == "reviews":
-                if "place_id" in value.keys() and 
+                if "place_id" in value.keys() and value["place_id"] == self.id:
+                    instances.append(value)
 
