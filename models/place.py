@@ -67,4 +67,6 @@ class Place(BaseModel, Base):
     def amenities(self, obj=None):
         """ Appends to the class attribute amenity_ids with all Amenity ids """
         if obj:
-            if isinstance()
+            from models.amenity import Amenity
+            if isinstance(obj, Amenity):
+                
