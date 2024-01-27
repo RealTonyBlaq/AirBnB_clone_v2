@@ -60,4 +60,8 @@ class Place(BaseModel, Base):
 
     @property
     def amenities(self):
-        """ Returns a list of ame"""
+        """ Returns a list of Amenity instances linked to place """
+        return self.amenity_ids
+
+    @amenities.setter
+    def amenities(self)
