@@ -33,4 +33,6 @@ class Place(BaseModel, Base):
         from models import storage
         instances = []
         for key, value in storage.all().items():
+            
             if key.split('.')[0] == "reviews":
+
