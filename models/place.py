@@ -8,9 +8,12 @@ from sqlalchemy.orm import relationship
 metadata = Base.metadata()
 
 place_amenity = Table("place_amenity", metadata,
-                      Column("place_id", String(60), ForeignKey("places.id"), primary_key=True, nullable=False),
+                      Column("place_id", String(60), ForeignKey("places.id"),
+                             primary_key=True, nullable=False),
                       Column("amenity_id", String(60), ForeignKey("amenities.id"),
-                             primary_key=True, nullable=False))
+                             primary_key=True, nullable=False)
+)
+
 
 class Place(BaseModel, Base):
     """ Defining the class Place:
@@ -38,6 +41,7 @@ class Place(BaseModel, Base):
     users = relationship("User", backref="place", cascade="all, delete")
     reviews = relationship("Review", backref="place",
                            cascade="all, delete")
+    
 
     @property
     def reviews(self):
