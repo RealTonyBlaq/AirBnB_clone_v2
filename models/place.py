@@ -64,6 +64,7 @@ class Place(BaseModel, Base):
         return self.amenity_ids
 
     @amenities.setter
-    def amenities(self, obj):
+    def amenities(self, obj=None):
         """ Appends to the class attribute amenity_ids with all Amenity ids """
-        if 
+        if obj:
+            if isinstance()
