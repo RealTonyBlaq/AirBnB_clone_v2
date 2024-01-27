@@ -21,7 +21,10 @@ class Review(BaseModel, Base):
             deleted as well.
     """
     __tablename__ = "reviews"
-    place_id = Column("place_id", String(60), ForeignKey("places.id"), nullable=False)
-    user_id = Column("user_id", String(60), ForeignKey("users.id"), nullable=False)
+    place_id = Column("place_id", String(60), ForeignKey("places.id"),
+                      nullable=False)
+    user_id = Column("user_id", String(60), ForeignKey("users.id"),
+                     nullable=False)
     text = Column("text", String(1024), nullable=False)
-    user = relationship("User", back_populates="reviews", cascade="all, delete")
+    user = relationship("User", back_populates="reviews",
+                        cascade="all, delete")
