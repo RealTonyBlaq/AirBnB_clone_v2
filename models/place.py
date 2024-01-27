@@ -32,4 +32,5 @@ class Place(BaseModel, Base):
         """ Returns a list of review instances with place_id = current place.id """
         from models import storage
         instances = []
-        for keys and
+        for key, value in storage.all().items():
+            if key.split('.')[0] == "reviews":
