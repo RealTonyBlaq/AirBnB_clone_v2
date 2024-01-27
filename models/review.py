@@ -8,14 +8,16 @@ from sqlalchemy.orm import relationship
 class Review(BaseModel, Base):
     """
     Defining the Review class to store review information
-    
+
     class attributes:
     =================
 
     __tablename__ (str): Name of the table
     place_id (str): Foreign key to table places.id, cannot be null
     user_id (str): Foreign key to the table users.id, cannot be null
-    text (str): The review text of 1024 chars max, cannot be
+    text (str): The review text of 1024 chars max, cannot be null
+    user: A relationship between the Class User and Review, if
+            a 
     """
     __tablename__ = "reviews"
     place_id = Column("place_id", String(60), ForeignKey("places.id"), nullable=False)
