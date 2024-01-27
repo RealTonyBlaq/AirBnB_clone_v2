@@ -34,7 +34,9 @@ class Place(BaseModel, Base):
 
     @property
     def reviews(self):
-        """ Returns a list of review instances with place_id = current place.id """
+        """
+        Returns a list of review instances with place_id = current place.id
+        """
         from models import storage
         review_instances = []
         for key, value in storage.all().items():
@@ -43,4 +45,3 @@ class Place(BaseModel, Base):
                 if "place_id" in value.keys() and value["place_id"] == self.id:
                     review_instances.append(value)
         return review_instances
-
