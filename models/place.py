@@ -59,4 +59,5 @@ class Place(BaseModel, Base):
         return review_instances
 
     @property
-    def 
+    def amenities(self):
+        """ Returns a list of ame"""
