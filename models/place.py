@@ -64,4 +64,5 @@ class Place(BaseModel, Base):
         return self.amenity_ids
 
     @amenities.setter
-    def amenities(self)
+    def amenities(self):
+        """ Sets the class attribute amenity_ids with all """
