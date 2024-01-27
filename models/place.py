@@ -29,4 +29,4 @@ class Place(BaseModel, Base):
 
     @property
     def reviews(self):
-        """"""
+        """ Returns """
