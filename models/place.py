@@ -30,3 +30,5 @@ class Place(BaseModel, Base):
     @property
     def reviews(self):
         """ Returns a list of review instances with place_id = current place.id """
+        from models import storage
+        
