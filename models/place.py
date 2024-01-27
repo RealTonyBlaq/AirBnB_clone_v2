@@ -8,7 +8,8 @@ from sqlalchemy.orm import relationship
 metadata = Base.metadata()
 
 place_amenity = Table("place_amenity", metadata,
-                      Column("place_id", String(60), ForeignKey()))
+                      Column("place_id", String(60), ForeignKey("places.id")),
+                      Column("amenity_id", String(60), ForeignKey()))
 
 class Place(BaseModel, Base):
     """ Defining the class Place:
