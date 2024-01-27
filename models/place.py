@@ -29,4 +29,4 @@ class Place(BaseModel, Base):
 
     @property
     def reviews(self):
-        """ Returns """
+        """ Returns a list of review instances with place_id = current place.id """
