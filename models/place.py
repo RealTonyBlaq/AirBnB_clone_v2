@@ -57,3 +57,6 @@ class Place(BaseModel, Base):
                 if "place_id" in value.keys() and value["place_id"] == self.id:
                     review_instances.append(value)
         return review_instances
+
+    @property
+    def 
