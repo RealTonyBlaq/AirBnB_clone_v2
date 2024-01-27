@@ -1,9 +1,14 @@
 #!/usr/bin/python3
 """ Place Module for HBNB project """
 from models.base_model import BaseModel, Base
-from sqlalchemy import String, Column, ForeignKey, Integer, Float
+from sqlalchemy import (String, Column, ForeignKey, Integer, Float,
+                        Table)
 from sqlalchemy.orm import relationship
 
+metadata = Base.metadata()
+
+place_amenity = Table("place_amenity", metadata,
+                      Column("place_id", String))
 
 class Place(BaseModel, Base):
     """ Defining the class Place:
