@@ -25,3 +25,8 @@ class Place(BaseModel, Base):
     amenity_ids = []
     cities = relationship("City", backref="place", cascade="all, delete")
     users = relationship("User", backref="place", cascade="all, delete")
+    reviews = relationship("Review", back_populates="place", cascade="all, delete")
+
+    @property
+    def reviews(self):
+        """"""
