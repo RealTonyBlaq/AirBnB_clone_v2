@@ -17,7 +17,8 @@ class Review(BaseModel, Base):
     user_id (str): Foreign key to the table users.id, cannot be null
     text (str): The review text of 1024 chars max, cannot be null
     user: A relationship between the Class User and Review, if
-            a 
+            a User instance is deleted, all Review instances are
+            deleted as well.
     """
     __tablename__ = "reviews"
     place_id = Column("place_id", String(60), ForeignKey("places.id"), nullable=False)
