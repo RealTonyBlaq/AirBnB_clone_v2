@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """ Place Module for HBNB project """
 from models.base_model import BaseModel, Base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import (String, Column, ForeignKey, Integer, Float,
                         Table)
 from sqlalchemy.orm import relationship
 
-metadata = Base.metadata
-
-place_amenity = Table("place_amenity", metadata,
+place_amenity = Table("place_amenity", Base.metadata,
                       Column("place_id", String(60), ForeignKey("places.id"),
                              primary_key=True, nullable=False),
                       Column("amenity_id", String(60), ForeignKey("amenities.id"),
@@ -68,5 +67,5 @@ class Place(BaseModel, Base):
         """ Appends to the class attribute amenity_ids with all Amenity ids """
         if obj:
             from models.amenity import Amenity
-            if isinstance(obj, Amenity):
+            if isinstance(obj, Amenity) and obj.id not in self.amenity_ids:
                 self.amenity_ids.append(obj.id)
