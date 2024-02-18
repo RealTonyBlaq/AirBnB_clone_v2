@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Script generates a .tgz archive using fabric """
 
-from fabric import task, local
+from fabric import task
 
 
 @task
