@@ -13,4 +13,4 @@ def do_pack(cc):
 		result = cc.local('date +"%Y%m%d%H%M%S"')
 		cc.local('tar -czvf web_static{}.tgz ./web_static/'.format(result))
 		cc.local('mkdir -p versions/')
-		cc.local('mv ')
+		cc.local('mv web_static{}.tgz versions/'.format(result))
