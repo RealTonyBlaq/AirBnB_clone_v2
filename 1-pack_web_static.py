@@ -12,4 +12,5 @@ def do_pack(cc):
 	with cc.cd('~/AirBnB_clone_v2'):
 		result = cc.local('date +"%Y%m%d%H%M%S"')
 		cc.local('tar -czvf web_static{}.tgz ./web_static/'.format(result))
-		cc.local('mkdir -p ')
+		cc.local('mkdir -p versions/')
+		cc.local('mv ')
