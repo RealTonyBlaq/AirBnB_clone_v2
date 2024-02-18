@@ -29,6 +29,6 @@ fi
 chown -hR ubuntu:ubuntu /data/
 
 echo "# Serves /data/web_static/current/ to /hbnb_static
-server{
+server {
 	
 }"
