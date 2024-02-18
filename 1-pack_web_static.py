@@ -10,4 +10,4 @@ def do_pack():
     """
     time = local('date +"%Y%m%d%H%M%S"')
     local('mkdir -p versions/')
-    local('tar -czvf versions/web_static_{}.tgz ./web_static/'.format(time))
+    local('tar -czvf versions/web_static_{}.tgz web_static'.format(time))
