@@ -31,6 +31,6 @@ chown -hR ubuntu:ubuntu /data/
 echo "# Serves /data/web_static/current/ to /hbnb_static
 server {
 	location /hbnb_static {
-		
+		root /data/web_static/current/
 	}
 }"
