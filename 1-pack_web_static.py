@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ Script generates a .tgz archive using fabric """
 
-from fabric.api import local, cd
+from fabric.api import local
 
 
 @task
-def do_pack(cc):
+def do_pack():
     """
     do_pack - Fab function to generate .tgz archives
     """
