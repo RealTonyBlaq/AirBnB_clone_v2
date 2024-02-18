@@ -6,13 +6,14 @@ if [ -x "$(command -v nginx)" ]; then
 		sudo apt -y install nginx
 fi
 
-# Creating directories if th
+# Creating directories if they don't exist already
 sudo mkdir -p /data
 sudo mkdir -p /data/web_static/
 sudo mkdir -p /data/web_static/releases/
 sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
 
+# Creating a fake HTML file to test my nginx configuration
 sudo echo "Testing my Nginx congiguration" > /data/web_static/releases/test/index.html
 
 if [ -L "/data/web_static/current" ]; then
