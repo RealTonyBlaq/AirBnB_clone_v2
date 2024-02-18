@@ -9,3 +9,5 @@ fi
 sudo mkdir -p /data
 sudo mkdir -p /data/web_static/
 sudo mkdir -p /data/web_static/releases/
+sudo mkdir -p /data/web_static/shared/
+sudo mkdir -p /data/web_static/shared/
