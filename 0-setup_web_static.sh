@@ -17,6 +17,7 @@ sudo mkdir -p /data/web_static/releases/test/
 # Creating a fake HTML file to test my nginx configuration
 sudo echo "Testing my Nginx congiguration" > /data/web_static/releases/test/index.html
 
+# Checks if a sy,
 if [ -L "/data/web_static/current" ]; then
 		rm /data/web_static/current
 		sudo ln -s /data/web_static/releases/test/ /data/web_static/current
