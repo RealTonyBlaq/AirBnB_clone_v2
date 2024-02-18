@@ -2,7 +2,7 @@
 # Script sets up my web servers for deployment of web_static
 
 # Checking if Nginx is installed, else
-if [ -x "$(command -v nginx)" ]; then
+if ! [ -x "$(command -v nginx)" ]; then
 		sudo apt update
 		sudo apt -y install nginx
 fi
