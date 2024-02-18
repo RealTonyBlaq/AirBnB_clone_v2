@@ -29,12 +29,8 @@ fi
 # Changing ownership of the /data/ directory to ubuntu as Owner and group, recursively
 chown -R ubuntu:ubuntu /data/
 
-echo "# Serves /data/web_static/current/ to /hbnb_static
-server {
-        location /hbnb_static {
-                alias /data/web_static/current/;
-        }
-}" | sudo tee -a /etc/nginx/sites-available/default
+# Serves /data/web_static/current/ to /hbnb_static
+sudo sed -i '48i\        location /hbnb_static {        alias /data/web_static/current/;}' /etc/nginx/sites-available/default
 
 sudo service nginx restart
 exit 0
