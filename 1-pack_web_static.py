@@ -8,6 +8,10 @@ def do_pack():
     """
     do_pack - Fab function to generate .tgz archives
     """
-    time = local('date +"%Y%m%d%H%M%S"')
+    arch = "web_static_{}.tgz".format(local('date +"%Y%m%d%H%M%S"'))
     local('mkdir -p versions/')
-    local('tar -czvf versions/web_static_{}.tgz web_static'.format(time))
+    archive = local('tar -czvf versions/{} web_static'.format(arch))
+    if archive.failed:
+        return None
+    else:
+        return "versions/{}".format(arch)
