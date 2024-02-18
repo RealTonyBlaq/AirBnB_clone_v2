@@ -19,3 +19,5 @@ if [ -L "/data/web_static/current" ]; then
 		sudo ln -s /data/web_static/releases/test/ /data/web_static/current
 else
 	sudo ln -s /data/web_static/releases/test/ /data/web_static/current
+fi
+
