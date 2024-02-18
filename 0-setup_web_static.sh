@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script sets up my web servers for deployment of web_static
 
-if [ "$(nginx -v && echo $?)" -ne 0 ]; then
+if [ -x "$(command -v nginx)" ]; then
 		sudo apt update
 		sudo apt -y install nginx
 fi
