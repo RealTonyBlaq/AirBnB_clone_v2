@@ -29,13 +29,12 @@ fi
 # Changing ownership of the /data/ directory to ubuntu as Owner and group, recursively
 chown -hR ubuntu /data/
 
-# shellcheck disable=SC2024
-sudo echo "# Serves /data/web_static/current/ to /hbnb_static
+echo "# Serves /data/web_static/current/ to /hbnb_static
 server {
         location /hbnb_static {
                 alias /data/web_static/current/;
         }
-}" >> /etc/nginx/sites-available/default
+}" | sudo tee /etc/nginx/sites-available/default
 
 sudo service nginx restart
 exit 0
