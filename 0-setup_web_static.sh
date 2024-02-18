@@ -36,3 +36,4 @@ server {
 }" >> /etc/nginx/sites-available/default
 
 sudo service nginx restart
+exit 0
