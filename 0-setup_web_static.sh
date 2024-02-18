@@ -15,6 +15,7 @@ sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
 
 # Creating a fake HTML file to test my nginx configuration
+# shellcheck disable=SC2024
 sudo echo "Testing my Nginx congiguration" > /data/web_static/releases/test/index.html
 
 # Checks if a symbolic link exists. If true, it is recreated, else, it is created.
@@ -28,7 +29,8 @@ fi
 # Changing ownership of the /data/ directory to ubuntu as Owner and group, recursively
 chown -hR ubuntu /data/
 
-echo "# Serves /data/web_static/current/ to /hbnb_static
+#
+sudo echo "# Serves /data/web_static/current/ to /hbnb_static
 server {
         location /hbnb_static {
                 alias /data/web_static/current/;
