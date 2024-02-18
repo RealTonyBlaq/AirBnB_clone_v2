@@ -32,7 +32,7 @@ echo "# Serves /data/web_static/current/ to /hbnb_static
 server {
         location /hbnb_static {
                 alias /data/web_static/current/;
-		}
+        }
 }"
 
 sudo service nginx restart
