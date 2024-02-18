@@ -15,7 +15,7 @@ sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
 
 # Creating a fake HTML file to test my nginx configuration
-echo "Testing my Nginx congiguration" > /data/web_static/releases/test/index.html
+echo "Testing my Nginx congiguration" | sudo tee /data/web_static/releases/test/index.html
 
 # Checks if a symbolic link exists. If true, it is recreated, else, it is created.
 if [ -L "/data/web_static/current" ]; then
