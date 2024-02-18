@@ -34,3 +34,5 @@ server {
 				alias /data/web_static/current/;
 		}
 }"
+
+sudo service nginx restart
