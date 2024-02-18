@@ -6,6 +6,7 @@ if [ -x "$(command -v nginx)" ]; then
 		sudo apt -y install nginx
 fi
 
+# Creating directories if th
 sudo mkdir -p /data
 sudo mkdir -p /data/web_static/
 sudo mkdir -p /data/web_static/releases/
@@ -22,3 +23,4 @@ else
 fi
 
 chown -hR ubuntu:ubuntu /data/
+
