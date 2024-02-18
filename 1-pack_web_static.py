@@ -15,6 +15,7 @@ def do_pack():
         return None
     else:
         return "versions/{}".format(arch)
-    
+
+
 if __name__ == "__main__":
     do_pack()
