@@ -3,4 +3,6 @@
 
 if [ "$(nginx -v && echo $?)" -ne 0 ]; then
 		sudo apt update
-		sudo apt insta
+		sudo apt -y install nginx
+fi
+
