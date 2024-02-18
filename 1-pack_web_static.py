@@ -9,4 +9,5 @@ def do_pack(cc):
 	"""
 	do_pack - Fab function to generate .tgz archives
 	"""
-	c = cc.local('')
+	with cc.cd('~/Airb')
+	cc.local('')
