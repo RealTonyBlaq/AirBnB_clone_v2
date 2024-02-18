@@ -15,3 +15,4 @@ sudo mkdir -p /data/web_static/releases/test/
 sudo echo "Testing my Nginx congiguration" > /data/web_static/releases/test/index.html
 
 if [ -L "/data/web_static/current" ]; then
+		rm /data/web_static
