@@ -25,5 +25,6 @@ else
 	sudo ln -s /data/web_static/releases/test/ /data/web_static/current
 fi
 
+# Changing ownership of the /data/ directory to ubuntu as 
 chown -hR ubuntu:ubuntu /data/
 
