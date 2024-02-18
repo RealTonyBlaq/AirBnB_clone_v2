@@ -5,6 +5,7 @@
 if ! [ -x "$(command -v nginx)" ]; then
 		sudo apt update
 		sudo apt -y install nginx
+		sudo ufw allow 'Nginx HTTP'
 fi
 
 # Creating directories if they don't exist already
