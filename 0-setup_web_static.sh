@@ -21,4 +21,4 @@ else
 	sudo ln -s /data/web_static/releases/test/ /data/web_static/current
 fi
 
-chown 
+chown -hR ubuntu:ubuntu /data/
