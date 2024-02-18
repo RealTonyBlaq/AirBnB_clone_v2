@@ -4,7 +4,8 @@
 from fabric import Connection
 
 
-def do_pack():
+def do_pack(cc):
 	"""
 	do_pack - Fab function to generate .tgz archives
 	"""
+	c = Connection('')
