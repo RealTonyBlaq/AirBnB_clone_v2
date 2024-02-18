@@ -6,3 +6,4 @@ if [ "$(nginx -v && echo $?)" -ne 0 ]; then
 		sudo apt -y install nginx
 fi
 
+sudo mkdir -p /data/web_static/
