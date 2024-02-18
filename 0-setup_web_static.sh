@@ -28,4 +28,4 @@ fi
 # Changing ownership of the /data/ directory to ubuntu as Owner and group, recursively
 chown -hR ubuntu:ubuntu /data/
 
-echo 
+echo "# "
