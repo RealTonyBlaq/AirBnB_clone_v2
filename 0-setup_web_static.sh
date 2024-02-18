@@ -5,6 +5,7 @@
 if ! [ -x "$(command -v nginx)" ]; then
 		sudo apt update
 		sudo apt -y install nginx
+		sudo ufw allow 'Nginx HTTP'
 fi
 
 # Creating directories if they don't exist already
@@ -26,7 +27,7 @@ else
 fi
 
 # Changing ownership of the /data/ directory to ubuntu as Owner and group, recursively
-chown -hR ubuntu:ubuntu /data/
+chown -R ubuntu:ubuntu /data/
 
 echo "# Serves /data/web_static/current/ to /hbnb_static
 server {
