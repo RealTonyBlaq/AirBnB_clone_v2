@@ -2,7 +2,6 @@
 """ Script generates a .tgz archive using fabric """
 
 from fabric import task
-from datetime import date
 
 
 @task
