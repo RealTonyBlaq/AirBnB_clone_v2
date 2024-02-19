@@ -27,7 +27,7 @@ else
 fi
 
 # Changing ownership of the /data/ directory to ubuntu as Owner and group, recursively
-chown -R ubuntu:ubuntu /data/
+sudo chown -R ubuntu:ubuntu /data/
 
 # sets up nginx to serve /data/web_static/current/ to /hbnb_static
 sudo sed -i '48i\        location /hbnb_static {        alias /data/web_static/current/;}' /etc/nginx/sites-available/default
