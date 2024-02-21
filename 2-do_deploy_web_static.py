@@ -12,7 +12,7 @@ def do_deploy(archive_path):
     if not os.path.exists(archive_path):
         return False
     env.user = "ubuntu"
-    env.hosts = ["54.152.133.156", ]
+    env.hosts = ["54.152.133.156", "54.165.176.3"]
     filename = archive_path.split(".")[0]
     with cd("/"):
         put(archive_path, "tmp/")
