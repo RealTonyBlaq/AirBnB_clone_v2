@@ -15,4 +15,4 @@ def do_deploy(archive_path):
     env.host = "54.152.133.156"
     with cd("/"):
         put(archive_path, "tmp/")
-        run("tar -xzf {} ")
+        run("tar -xzf {} /")
