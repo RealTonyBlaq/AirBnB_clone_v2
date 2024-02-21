@@ -20,3 +20,4 @@ def do_deploy(archive_path):
         sudo("rm {}".format(archive_path))
         sudo("rm /data/web_static/current")
         sudo("ln -s /data/web_static/releases/{} /data/web_static/current".format(filename))
+    return True
