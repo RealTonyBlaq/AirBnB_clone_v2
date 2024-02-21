@@ -16,8 +16,10 @@ def do_deploy(archive_path):
     filename = archive_path.split(".")[0]
     with cd("/"):
         put(archive_path, "tmp/")
-        run("tar -xzf {} /data/web_static/releases/{}".format(archive_path, filename))
+        run("tar -xzf {} /data/web_static/releases/{}".format(archive_path,
+                                                              filename))
         sudo("rm {}".format(archive_path))
         sudo("rm /data/web_static/current")
-        sudo("ln -s /data/web_static/releases/{} /data/web_static/current".format(filename))
+        sudo("ln -s /data/web_static/releases/{} /data/web_static/current"
+             .format(filename))
     return True
