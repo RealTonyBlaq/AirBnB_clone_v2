@@ -13,4 +13,4 @@ def do_deploy(archive_path):
         return False
     env.user = "ubuntu"
     env.host = "54.152.133.156"
-    
+    l
