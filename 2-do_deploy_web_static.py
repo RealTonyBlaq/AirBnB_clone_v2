@@ -13,7 +13,7 @@ def do_deploy(archive_path):
         return False
     env.user = "ubuntu"
     env.host = "54.152.133.156"
-    filen
+    filename = archive_path.split(".")[0]
     with cd("/"):
         put(archive_path, "tmp/")
-        run("tar -xzf {} /data/web_static/releases/")
+        run("tar -xzf {} /data/web_static/releases/{}".format())
