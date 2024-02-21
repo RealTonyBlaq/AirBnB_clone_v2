@@ -9,4 +9,5 @@ import os
 
 
 def do_deploy(archive_path):
-    if os.
+    if not os.path.exists(archive_path):
+        
