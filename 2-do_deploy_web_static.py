@@ -18,4 +18,4 @@ def do_deploy(archive_path):
         put(archive_path, "tmp/")
         run("tar -xzf {} /data/web_static/releases/{}".format(archive_path, filename))
         sudo("rm {}".format(archive_path))
-        sudo(rm )
+        sudo("rm /data/web_static/current")
