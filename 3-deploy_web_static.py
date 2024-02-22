@@ -3,8 +3,10 @@
 
 from fabric.api import env, run, put, local
 from datetime import datetime
+import os
 
 env.hosts = ['54.152.133.156', '54.165.176.3']
+
 
 def do_pack():
     """
@@ -38,6 +40,7 @@ def do_deploy(archive_path):
         return True
     except Exception:
         return False
+
 def deploy():
     """ Performs the do_deploy and do_pack functions """
     archive_path = do_pack()
