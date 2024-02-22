@@ -36,9 +36,9 @@ def do_deploy(archive_path):
             run("mkdir -p /data/web_static/releases/")
             run("tar -xzf tmp/{} -C /data/web_static/releases/{}".format(filename,
                                                                 filename.split('.')[0]))
-            sudo("rm tmp/{}".format(filename))
-            local("rm /data/web_static/current")
-            sudo("ln -s /data/web_static/releases/{} /data/web_static/current"
+            run("rm tmp/{}".format(filename))
+            run("rm /data/web_static/current")
+            run("ln -s /data/web_static/releases/{} /data/web_static/current"
                 .format(filename))
             return True
     except Exception:
