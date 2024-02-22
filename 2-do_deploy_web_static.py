@@ -34,13 +34,12 @@ def do_deploy(archive_path):
         with cd("/"):
             put(archive_path, "tmp/")
             run("mkdir -p /data/web_static/releases/")
-            uncompress = run("tar -xzf tmp/{} -C /data/web_static/releases/{}".format(filename,
+            run("tar -xzf tmp/{} -C /data/web_static/releases/{}".format(filename,
                                                                 filename.split('.')[0]))
-            if uncompress.failed:
-                return False
             sudo("rm tmp/{}".format(filename))
             local("rm /data/web_static/current")
             sudo("ln -s /data/web_static/releases/{} /data/web_static/current"
                 .format(filename))
             return True
-    except Exception
+    except Exception:
+        return False
