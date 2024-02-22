@@ -39,3 +39,5 @@ def do_deploy(archive_path):
     return True
 
 if __name__ == "__main__":
+    do_pack()
+    do_deploy()
