@@ -35,8 +35,8 @@ def do_deploy(archive_path):
             filename, file_no_ext))
         run("rm /tmp/{}".format(filename))
         run("rm -rf /data/web_static/current")
-        run("ln -s /data/web_static/releases/{} /data/web_static/current"
-            .format(filename))
+        run("ln -s /data/web_static/releases/{}/ /data/web_static/current"
+            .format(file_no_ext))
         return True
     except Exception:
         return False
