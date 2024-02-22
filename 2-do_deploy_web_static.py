@@ -26,14 +26,16 @@ def do_pack():
 def do_deploy(archive_path):
     if not os.path.exists(archive_path):
         return False
-    env.user = "ubuntu"
-    env.hosts = ["54.152.133.156", "54.165.176.3"]
-    filename = archive_path.split(".")[0]
+    env.user = 'ubuntu'
+    env.hosts = ['54.152.133.156', '54.165.176.3']
+    filename = archive_path.split("/")[1]
     with cd("/"):
         put(archive_path, "tmp/")
-        run("tar -xzf {} /data/web_static/releases/{}".format(archive_path,
-                                                              filename))
-        sudo("rm {}".format(archive_path))
+        uncompress = run("tar -xzf tmp/{} /data/web_static/releases/{}".format(filename,
+                                                              filename.split('.')[0]))
+        if uncompress.failed:
+            return False
+        sudo("rm tmp/{}".format(filename))
         sudo("rm /data/web_static/current")
         sudo("ln -s /data/web_static/releases/{} /data/web_static/current"
              .format(filename))
