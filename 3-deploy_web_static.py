@@ -27,17 +27,16 @@ def do_deploy(archive_path):
     if not os.path.exists(archive_path):
         return False
     try:
-        fileN = archive_path.split("/")[-1]
-        wtht_ext = fileN.split(".")[0]
-        path = "/data/web_static/releases/"
-        put(archive_path, '/tmp/')
-        run('mkdir -p {}{}/'.format(path, wtht_ext))
-        run('tar -xzf /tmp/{} -C {}{}/'.format(fileN, path, wtht_ext))
-        run('rm /tmp/{}'.format(fileN))
-        run('mv {0}{1}/web_static/* {0}{1}/'.format(path, wtht_ext))
-        run('rm -rf {}{}/web_static'.format(path, wtht_ext))
-        run('rm -rf /data/web_static/current')
-        run('ln -s {}{}/ /data/web_static/current'.format(path, wtht_ext))
+        filename = archive_path.split("/")[-1]
+        file_no_ext = filename.split('.')[0]
+        put(archive_path, "/tmp/")
+        run("mkdir -p /data/web_static/releases/{}/".format(file_no_ext))
+        run("tar -xzf /tmp/{} -C /data/web_static/releases/{}/".format(
+            filename, file_no_ext))
+        run("rm /tmp/{}".format(filename))
+        run("rm -rf /data/web_static/current")
+        run("ln -s /data/web_static/releases/{}/ /data/web_static/current"
+            .format(file_no_ext))
         return True
     except Exception:
         return False
