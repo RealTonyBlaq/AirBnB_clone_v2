@@ -31,7 +31,7 @@ def do_deploy(archive_path):
     filename = archive_path.split("/")[1]
     with cd("/"):
         put(archive_path, "tmp/")
-        uncompress = run("tar -xzf tmp/{} /data/web_static/releases/{}".format(filename,
+        uncompress = run("tar -xzvf tmp/{} /data/web_static/releases/{}".format(filename,
                                                               filename.split('.')[0]))
         if uncompress.failed:
             return False
