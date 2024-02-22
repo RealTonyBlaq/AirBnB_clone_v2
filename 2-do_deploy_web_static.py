@@ -31,10 +31,10 @@ def do_deploy(archive_path):
         return False
     try:
         filename = archive_path.split("/")[1]
-        file_no
+        file_no_ext = filename.split('.')[0]
         with cd("/"):
             put(archive_path, "tmp/")
-            run("mkdir -p /data/web_static/releases/{}".format()
+            run("mkdir -p /data/web_static/releases/{}".format(fi))
             run("tar -xzf /tmp/{} -C /data/web_static/releases/{}".format(filename,
                                                                 filename.split('.')[0]))
             run("rm tmp/{}".format(filename))
