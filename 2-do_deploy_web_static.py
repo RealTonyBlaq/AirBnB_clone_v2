@@ -12,7 +12,7 @@ env.hosts = ['54.152.133.156', '54.165.176.3']
 
 
 def do_deploy(archive_path):
-    ''
+    """ Puts an archive to my web servers and uncompresses it """
     if not os.path.exists(archive_path):
         return False
     try:
