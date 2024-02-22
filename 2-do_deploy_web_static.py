@@ -4,7 +4,7 @@ Script distributes an archive to my web servers,
 using the function do_deploy().
 """
 
-from fabric.api import *
+from fabric.api import put, run, env, cd
 from datetime import datetime
 import os
 
