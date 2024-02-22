@@ -22,7 +22,7 @@ def do_pack():
         return "versions/{}".format(arch)
 
 
-def do_deploy(archive_path):
+def do_deploy():
     if not os.path.exists(archive_path):
         return False
     env.user = "ubuntu"
