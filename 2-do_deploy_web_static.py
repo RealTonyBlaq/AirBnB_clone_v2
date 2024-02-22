@@ -37,7 +37,7 @@ def do_deploy(archive_path):
             run("tar -xzf tmp/{} -C /data/web_static/releases/{}".format(filename,
                                                                 filename.split('.')[0]))
             run("rm tmp/{}".format(filename))
-            run("rm /data/web_static/current")
+            run("rm -rf /data/web_static/current")
             run("ln -s /data/web_static/releases/{} /data/web_static/current"
                 .format(filename))
             return True
