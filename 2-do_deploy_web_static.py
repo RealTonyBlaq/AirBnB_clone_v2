@@ -37,3 +37,5 @@ def do_deploy(archive_path):
         sudo("ln -s /data/web_static/releases/{} /data/web_static/current"
              .format(filename))
     return True
+
+if __name__ == "__main__":
