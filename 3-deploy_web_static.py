@@ -21,6 +21,7 @@ def do_pack():
     else:
         return "versions/{}".format(arch)
 
+
 def do_deploy(archive_path):
     """ Puts an archive to my web servers and uncompresses it """
     if not os.path.exists(archive_path):
@@ -40,6 +41,7 @@ def do_deploy(archive_path):
         return True
     except Exception:
         return False
+
 
 def deploy():
     """ Performs the do_deploy and do_pack functions """
