@@ -38,7 +38,7 @@ def do_deploy(archive_path):
         if uncompress.failed:
             return False
         sudo("rm tmp/{}".format(filename))
-        sudo("rm /data/web_static/current")
+        local("rm /data/web_static/current")
         sudo("ln -s /data/web_static/releases/{} /data/web_static/current"
              .format(filename))
     return True
