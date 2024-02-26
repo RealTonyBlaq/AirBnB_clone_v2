@@ -17,3 +17,5 @@ tasks = [
         'done': False
     }
 ]
+
+@app.route('/api/v1.0/tasks')
