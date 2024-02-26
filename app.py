@@ -19,3 +19,5 @@ tasks = [
 ]
 
 @app.route('/api/v1.0/tasks')
+def get_tasks():
+    return jsonify()
