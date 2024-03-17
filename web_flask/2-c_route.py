@@ -19,7 +19,8 @@ def sub():
     return "HBNB"
 
 
-@app.
+@app.route('/c/<text>', strict_slashes=False)
+def c_route
 
 
 if __name__ == "__main__":
