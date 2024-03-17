@@ -13,6 +13,7 @@ def root():
     return "Hello HBNB!"
 
 
-@app.route('/HBNB')
+@app.route('/hbnb', strict_slashes=False)
+def sub
 if __name__ == "__main__":
     app.run("0.0.0.0", 5000)
