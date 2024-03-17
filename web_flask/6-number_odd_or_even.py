@@ -57,7 +57,9 @@ def template(n):
         abort(404)
 
 
-@app.ro
+@app.route('/number_odd_or_even/<n>', strict_slashes=False)
+def template2(n):
+    """ """
 
 
 if __name__ == "__main__":
