@@ -10,4 +10,5 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def error()
+def teardown():
+    
