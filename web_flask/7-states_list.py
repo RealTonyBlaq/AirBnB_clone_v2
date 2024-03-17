@@ -19,6 +19,6 @@ def teardown():
 def all_states():
     """ Returns a list of state objects """
     states = storage.all(State)
-    objs = [ ]
-    for
+    objs = [ob.to_dict() for ob in states.values()]
+    for ins
     
