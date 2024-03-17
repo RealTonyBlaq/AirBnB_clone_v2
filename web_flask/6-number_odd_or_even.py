@@ -57,5 +57,8 @@ def template(n):
         abort(404)
 
 
+@app.ro
+
+
 if __name__ == "__main__":
     app.run("0.0.0.0", 5000)
