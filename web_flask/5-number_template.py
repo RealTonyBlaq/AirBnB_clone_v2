@@ -47,7 +47,8 @@ def number(n):
 
 
 @app.route('/number_template/<n>', strict_slashes=False)
-def
+def template(n):
+    """ """
 
 
 if __name__ == "__main__":
