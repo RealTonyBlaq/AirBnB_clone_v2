@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Script starts a Web Flask App """
 
-from flask import abort, Flask, make_response, render_template
+from flask import abort, Flask, render_template
 
 
 app = Flask(__name__)
