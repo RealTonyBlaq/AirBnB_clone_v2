@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Web Flask app that returns list of states from DB """
 
-from flask import abort, Flask, render_template
+from flask import Flask, render_template, jsonify
 from models import storage
 from models.state import State
 
@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def teardown():
+def teardown(error=None):
     """ Removes each database session """
     storage.close()
 
@@ -19,8 +19,8 @@ def teardown():
 def all_states():
     """ Returns a list of state objects """
     states = storage.all(State)
-    objs = [ob.to_dict() for ob in states.values()]
-    render = render_template('7-states_list.html', state_list=objs)
+    state_list = [v.to_dict() for v in states.values()]
+    render = render_template('7-states_list.html', state_list=state_list)
     return render
 
 
