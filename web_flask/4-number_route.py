@@ -36,6 +36,8 @@ def py_route(text="is cool"):
     return "Python {}".format(text)
 
 
-@app.route()
+@app.route('/number/<n>', strict_slashes=False)
+def number(n):
+    """ Returns a string plus the number passed """
 if __name__ == "__main__":
     app.run("0.0.0.0", 5000)
