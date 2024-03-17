@@ -23,7 +23,8 @@ def sub():
 def c_route(text):
     """ Returns a string + text passed to the url """
     if "_" in text:
-        t
+        text = text.replace('_', ' ')
+    
 
 
 if __name__ == "__main__":
