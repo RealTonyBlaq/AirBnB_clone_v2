@@ -28,8 +28,9 @@ def c_route(text):
 
 
 @app.route('/python/<text>', strict_slashes=False)
-def py_route(text):
-    """ Ret"""
+def py_route(text=):
+    """ Returns a string + text passed """
+    
 
 
 if __name__ == "__main__":
