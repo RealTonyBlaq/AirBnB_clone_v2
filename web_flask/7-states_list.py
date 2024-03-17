@@ -18,4 +18,4 @@ def teardown():
 @app.route('/states_list', strict_slashes=False)
 def all_states():
     """ Returns a list of state objects """
-    
+    states = storage.all(S)
