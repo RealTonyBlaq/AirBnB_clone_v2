@@ -59,7 +59,7 @@ def template(n):
 
 @app.route('/number_odd_or_even/<n>', strict_slashes=False)
 def template2(n):
-    """ """
+    """ Returns a rendered template, else 404 """
 
 
 if __name__ == "__main__":
