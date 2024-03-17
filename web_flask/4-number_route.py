@@ -39,9 +39,10 @@ def py_route(text="is cool"):
 @app.route('/number/<n>', strict_slashes=False)
 def number(n):
     """ Returns a string plus the number passed """
-    number = int(n)
-    if number:
+    try:
+        number = int(n)
         return "{} is a number".format(number)
+    except ValueError:
     abort(404)
 
 
