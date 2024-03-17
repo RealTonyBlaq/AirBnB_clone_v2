@@ -48,7 +48,8 @@ def number(n):
 
 @app.route('/number_template/<n>', strict_slashes=False)
 def template(n):
-    """ """
+    """ Displays an HTML page if n is a number """
+    try:
 
 
 if __name__ == "__main__":
