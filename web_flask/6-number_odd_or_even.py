@@ -62,7 +62,7 @@ def template2(n):
     """ Returns a rendered template, else 404 """
     try:
         num = int(n)
-        
+        return render_template('')
     except ValueError:
         abort(404)
 
