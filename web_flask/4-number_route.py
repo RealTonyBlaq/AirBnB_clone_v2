@@ -43,7 +43,7 @@ def number(n):
         number = int(n)
         return "{} is a number".format(number)
     except ValueError:
-        
+        return 
 
 
 if __name__ == "__main__":
