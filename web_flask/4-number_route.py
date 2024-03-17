@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Script starts a Web Flask App """
 
-from flask import abort, Flask
+from flask import Flask
 
 
 app = Flask(__name__)
@@ -43,7 +43,7 @@ def number(n):
         number = int(n)
         return "{} is a number".format(number)
     except ValueError:
-    abort(404)
+        abort(404)
 
 
 if __name__ == "__main__":
