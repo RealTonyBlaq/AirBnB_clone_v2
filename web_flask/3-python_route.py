@@ -31,7 +31,8 @@ def c_route(text):
 def py_route(text="is cool"):
     """ Returns a string + text passed """
     if "_" in text:
-        
+        text = text.replace('_', ' ')
+    return ""
     
 
 
