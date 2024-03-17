@@ -48,7 +48,7 @@ def number(n):
 
 @app.route('/number_template/<n>', strict_slashes=False)
 def template(n):
-    """ Displays an HTML page if n is a number else """
+    """ Displays an HTML page if n is a number else return 404 """
     try:
         number = int(n)
         render = render_template('5-number.html', number=number)
