@@ -62,7 +62,7 @@ def template2(n):
     """ Returns a rendered template, else 404 """
     try:
         num = int(n)
-        return render_template('6-number_odd_or_even.html', num=num)
+        return render_template('6-number_odd_or_even.html', number=num)
     except ValueError:
         abort(404)
 
