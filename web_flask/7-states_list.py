@@ -20,5 +20,5 @@ def all_states():
     """ Returns a list of state objects """
     states = storage.all(State)
     objs = [ob.to_dict() for ob in states.values()]
-    for ins
+    render = render_template
     
