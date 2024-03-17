@@ -50,6 +50,9 @@ def number(n):
 def template(n):
     """ Displays an HTML page if n is a number """
     try:
+        number = int(n)
+    except ValueError:
+        abort(404)
 
 
 if __name__ == "__main__":
