@@ -27,7 +27,9 @@ def c_route(text):
     return "C {}".format(text)
 
 
-@
+@app.route('/python/<text>', strict_slashes=False)
+def py_route(text):
+    """ Ret"""
 
 
 if __name__ == "__main__":
