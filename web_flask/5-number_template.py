@@ -48,10 +48,10 @@ def number(n):
 
 @app.route('/number_template/<n>', strict_slashes=False)
 def template(n):
-    """ Displays an HTML page if n is a number """
+    """ Displays an HTML page if n is a number else """
     try:
         number = int(n)
-        render = render_template('templates/5-number.html', num=number)
+        render = render_template('5-number.html', number=number)
         return render
     except ValueError:
         abort(404)
