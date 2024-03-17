@@ -11,4 +11,5 @@ app = Flask(__name__)
 
 @app.teardown_appcontext
 def teardown():
-    
+    """ Removes each database session """
+    storage.close()
