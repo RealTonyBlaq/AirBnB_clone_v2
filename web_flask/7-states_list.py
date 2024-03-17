@@ -13,3 +13,6 @@ app = Flask(__name__)
 def teardown():
     """ Removes each database session """
     storage.close()
+
+
+@app.route('/states_list')
