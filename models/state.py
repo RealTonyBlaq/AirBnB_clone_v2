@@ -38,6 +38,7 @@ class State(BaseModel, Base):
             for key, value in objects.items():
                 obj = key.split('.')[0]
                 if obj == "City":
-                    if 'state_id' in value.keys() and value['state_id'] == self.id:
+                    if 'state_id' in value.keys()\
+                      and value['state_id'] == self.id:
                         city_instances.append(objects[key])
             return city_instances
