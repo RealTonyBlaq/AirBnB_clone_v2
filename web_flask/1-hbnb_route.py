@@ -14,6 +14,8 @@ def root():
 
 
 @app.route('/hbnb', strict_slashes=False)
-def sub
+def sub():
+    """ Returns a string when this path is accessed """
+    return 
 if __name__ == "__main__":
     app.run("0.0.0.0", 5000)
