@@ -21,7 +21,9 @@ def sub():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c_route(text):
-    """ Returns a string + """
+    """ Returns a string + text passed to the url """
+    if "_" in text:
+        t
 
 
 if __name__ == "__main__":
