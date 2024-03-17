@@ -32,9 +32,8 @@ def py_route(text="is cool"):
     """ Returns a string + text passed """
     if "_" in text:
         text = text.replace('_', ' ')
-    return ""
+    return "Python {}".format(text)
     
-
 
 if __name__ == "__main__":
     app.run("0.0.0.0", 5000)
