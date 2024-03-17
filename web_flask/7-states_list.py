@@ -21,4 +21,8 @@ def all_states():
     states = storage.all(State)
     objs = [ob.to_dict() for ob in states.values()]
     render = render_template('7-states_list.html', state_list=objs)
-    
+    return render
+
+
+if __name__ == "__main__":
+    app.run()
