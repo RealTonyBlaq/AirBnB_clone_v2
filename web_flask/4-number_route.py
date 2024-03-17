@@ -36,6 +36,6 @@ def py_route(text="is cool"):
     return "Python {}".format(text)
 
 
-
+@app.route()
 if __name__ == "__main__":
     app.run("0.0.0.0", 5000)
