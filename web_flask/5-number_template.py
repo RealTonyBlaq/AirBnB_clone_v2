@@ -46,5 +46,9 @@ def number(n):
         abort(404)
 
 
+@app.route('/number_template/<n>', strict_slashes=False)
+def
+
+
 if __name__ == "__main__":
     app.run("0.0.0.0", 5000)
