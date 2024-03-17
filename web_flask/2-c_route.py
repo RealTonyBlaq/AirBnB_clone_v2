@@ -20,7 +20,8 @@ def sub():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def c_route
+def c_route(text):
+    """ Returns a string + """
 
 
 if __name__ == "__main__":
