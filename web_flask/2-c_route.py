@@ -24,7 +24,7 @@ def c_route(text):
     """ Returns a string + text passed to the url """
     if "_" in text:
         text = text.replace('_', ' ')
-    
+    return "C {}".format(text)
 
 
 if __name__ == "__main__":
