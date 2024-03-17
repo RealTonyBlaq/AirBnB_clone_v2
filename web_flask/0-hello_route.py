@@ -10,4 +10,8 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def root():
     """ Returns a string """
-    return “Hello HBNB!”
+    return "Hello HBNB!"
+
+
+if __name__ == "__main__":
+    
