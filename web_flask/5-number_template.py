@@ -51,7 +51,8 @@ def template(n):
     """ Displays an HTML page if n is a number """
     try:
         number = int(n)
-        render = render_template('templates/5-number.html', num=)
+        render = render_template('templates/5-number.html', num=number)
+        return render
     except ValueError:
         abort(404)
 
