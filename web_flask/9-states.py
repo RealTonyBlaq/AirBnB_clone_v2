@@ -20,7 +20,7 @@ def teardown(error=None):
 def city_by_states():
     """ Returns a rendered list of cities by state objects """
     states = [v.to_dict() for v in storage.all(State).values()]
-    
+    sorted_states = 
     
 
 if __name__ == "__main__":
