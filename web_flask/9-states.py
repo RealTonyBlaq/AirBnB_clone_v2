@@ -31,7 +31,7 @@ def city_by_states(id=None):
                         new.append(city)
                 break
         my_cities = sorted(new, key=lambda y: y['name'])
-        
+        my_states = [{}]
     else:
         my_states = sorted(states, key=lambda x: x['name'])
     return render_template('9-states.html', states_list=my_states)
