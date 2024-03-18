@@ -16,7 +16,8 @@
         <H3>Cities:</H3>
         <UL>
             {% for city in my_states['cities'] %}
-            <LI>{{ city['id']}}</LI>
+            <LI>{{ city['id']}}: <B>{{ city['name'] }}</B></LI>
+            {}
         </UL>
     </BODY>
 </HTML>
