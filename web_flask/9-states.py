@@ -30,7 +30,7 @@ def city_by_states(id=None):
                     if city['state_id'] == state['id']:
                         new.append(city)
                 break
-        my_cities = sorted(new, key=lambda x)
+        my_cities = sorted(new, key=lambda y: y['name'])
         
     else:
         my_states = sorted(states, key=lambda x: x['name'])
