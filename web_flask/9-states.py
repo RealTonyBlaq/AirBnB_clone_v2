@@ -21,8 +21,9 @@ def teardown(error=None):
 def city_by_states(id):
     """ Returns a rendered list of cities by state objects """
     states = [v.to_dict() for v in storage.all(State).values()]
-        my_states = sorted(states, key=lambda x: x['name'])
-        return render_template('9-states.html', states_list=my_states)
+    if id:
+    my_states = sorted(states, key=lambda x: x['name'])
+    return render_template('9-states.html', states_list=my_states)
     
 
 if __name__ == "__main__":
