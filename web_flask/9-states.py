@@ -36,7 +36,7 @@ def city_by_states(id=None):
     else:
         my_states = sorted(states, key=lambda x: x['name'])
     return render_template('9-states.html', states_list=my_states)
-    
+
 
 if __name__ == "__main__":
     app.run('0.0.0.0', 5000)
