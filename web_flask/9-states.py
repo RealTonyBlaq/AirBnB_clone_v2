@@ -26,6 +26,7 @@ def city_by_states(id=None):
         new = []
         for state in states:
             if state['id'] == id:
+                obj = state
                 for city in cities:
                     if city['state_id'] == state['id']:
                         new.append(city)
