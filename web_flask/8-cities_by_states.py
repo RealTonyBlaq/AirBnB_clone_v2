@@ -28,7 +28,8 @@ def all_states():
         new = []
         for city in sorted_cities:
             if state['id'] == city['state_id']:
-                so
+                new.append(city)
+        
     render = render_template('7-states_list.html', state_list=sorted_list)
     return render
 
