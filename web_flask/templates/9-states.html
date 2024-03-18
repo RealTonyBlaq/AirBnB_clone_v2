@@ -17,7 +17,8 @@
         <UL>
             {% for city in my_states['cities'] %}
             <LI>{{ city['id']}}: <B>{{ city['name'] }}</B></LI>
-            {}
+            {% endfor %}
         </UL>
+        {% endif %}
     </BODY>
 </HTML>
