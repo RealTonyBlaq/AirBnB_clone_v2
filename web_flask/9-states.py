@@ -19,7 +19,8 @@ def teardown(error=None):
 @app.route('/states', strict_slashes=False)
 def city_by_states():
     """ Returns a rendered list of cities by state objects """
-    states = [v.storage.all(State)
+    states = [v.to_dict() for v in storage.all(State).values()]
+    
     
 
 if __name__ == "__main__":
