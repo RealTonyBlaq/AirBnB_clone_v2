@@ -36,6 +36,6 @@ class State(BaseModel, Base):
             objects = storage.all(City)
             city_instances = []
             for key, value in objects.items():
-                if value.state_id == self.id:
+                if value['state_id'] == self.id:
                     city_instances.append(objects[key])
             return city_instances
