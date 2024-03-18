@@ -16,10 +16,10 @@ def teardown(error=None):
     storage.close()
 
 
-@app.route('/cities_by_states', strict_slashes=False)
+@app.route('/states', strict_slashes=False)
 def city_by_states():
     """ Returns a rendered list of cities by state objects """
-    
+    states
     
 
 if __name__ == "__main__":
