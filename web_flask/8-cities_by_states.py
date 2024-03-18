@@ -20,8 +20,7 @@ def teardown(error=None):
 def all_states():
     """ Returns a list of cities by state objects """
     states = [v.to_dict() for v in storage.all(State).values()]
-    cities = v.to_dict() for v in storage.all(City).va
-    state_list = [v.to_dict() for v in states.values()]
+    cities = [v.to_dict() for v in storage.all(City).values()]
     sorted_list = sorted(state_list, key=lambda x: x['name'])
     render = render_template('7-states_list.html', state_list=sorted_list)
     return render
