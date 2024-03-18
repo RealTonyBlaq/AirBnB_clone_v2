@@ -18,13 +18,20 @@ def teardown(error=None):
 
 @app.route('/states', strict_slashes=False)
 @app.route('/states/<id>', strict_slashes=False)
-def city_by_states(id):
+def city_by_states(id=None):
     """ Returns a rendered list of cities by state objects """
     states = [v.to_dict() for v in storage.all(State).values()]
+    cities = [v.to_dict() for v in storage.all(City).values()]
     if id:
-        for obj in states:
-            if obj['id'] == id:
-                my_states = obj
+        new = []
+        for state in states:
+            if state['id'] == id:
+                for city in cities:
+                    if city['state_id'] == state['id']:
+                        new.append(city)
+                break
+        my_cities = 
+        
     else:
         my_states = sorted(states, key=lambda x: x['name'])
     return render_template('9-states.html', states_list=my_states)
