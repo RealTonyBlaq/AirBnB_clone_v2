@@ -27,7 +27,7 @@ def all_states():
     for state in sorted_states:
         for city in sorted_cities:
             if state['id'] == city['state_id']:
-                
+                so
     render = render_template('7-states_list.html', state_list=sorted_list)
     return render
 
