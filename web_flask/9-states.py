@@ -17,7 +17,7 @@ def teardown(error=None):
 
 
 @app.route('/cities_by_states', strict_slashes=False)
-def all_states():
+def city_by_states():
     """ Returns a rendered list of cities by state objects """
     
 
