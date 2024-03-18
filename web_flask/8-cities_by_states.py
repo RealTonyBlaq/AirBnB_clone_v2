@@ -23,7 +23,7 @@ def all_states():
     cities = [v.to_dict() for v in storage.all(City).values()]
     sorted_states = sorted(states, key=lambda x: x['name'])
     sorted_cities = sorted(cities, key=lambda x: x['name'])
-    for 
+    for state in sorted_states()
     render = render_template('7-states_list.html', state_list=sorted_list)
     return render
 
