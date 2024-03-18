@@ -4,10 +4,10 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        {% if isinstance(my_states, dict) %}
+        {% if isinstance(my_states, list) %}
         <H1>States</H1>
         <UL>
-            {% for item in a_list %}
+            {% for item in my_states %}
             <LI>{{ item['state_id'] }}: <B>{{ item['state_name'] }}</B> </LI>
             {% endfor %}
         </UL>
