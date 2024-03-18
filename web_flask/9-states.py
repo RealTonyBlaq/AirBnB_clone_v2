@@ -20,7 +20,7 @@ def teardown(error=None):
 @app.route('/states/<id>', strict_slashes=False)
 def city_by_states(id):
     """ Returns a rendered list of cities by state objects """
-    
+    if not id:
     states = [v.to_dict() for v in storage.all(State).values()]
     sorted_states = sorted(states, key=lambda x: x['name'])
     return render_template('9-states.html', states_list=sorted_states)
