@@ -30,7 +30,7 @@ def all_states():
             if state['id'] == city['state_id']:
                 new.append(city)
         sorted_list.append({"state_id": state['id'], 'state_name': state['name'], 'cities': new})
-    return render_template('7-states_list.html', state_list=sorted_list)
+    return render_template('7-states_list.html', a_list=sorted_list)
 
 
 if __name__ == "__main__":
