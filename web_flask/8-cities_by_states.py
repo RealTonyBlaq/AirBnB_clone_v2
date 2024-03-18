@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """ Web Flask app that returns list of states from DB """
 
-from flask import Flask, render_template, jsonify
-from models import storage
+from flask import Flask, render_template
 from models.city import City
 from models.state import State
+from models import storage
 
 
 app = Flask(__name__)
