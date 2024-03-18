@@ -6,8 +6,7 @@
     <BODY>
         {% if not states_list %}
         <H1>Not found!</H1>
-        {% endif %}
-        {% if 'state_name' not in states_list[0] %}
+        {% elif 'state_name' not in states_list[0] %}
         <H1>States</H1>
         <UL>
             {% for item in states_list %}
