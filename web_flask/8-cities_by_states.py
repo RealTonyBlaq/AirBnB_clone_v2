@@ -25,6 +25,7 @@ def all_states():
     sorted_cities = sorted(cities, key=lambda x: x['name'])
     sorted_list = []
     for state in sorted_states:
+        new = []
         for city in sorted_cities:
             if state['id'] == city['state_id']:
                 so
