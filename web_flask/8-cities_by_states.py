@@ -19,7 +19,7 @@ def teardown(error=None):
 @app.route('/cities_by_states', strict_slashes=False)
 def all_states():
     """ Returns a list of cities by state objects """
-    states = [storage.all(State).values()
+    states = [v.to_dict() for v in storage.all(State).values()]
     cities = storage.all(City)
     state_list = [v.to_dict() for v in states.values()]
     sorted_list = sorted(state_list, key=lambda x: x['name'])
