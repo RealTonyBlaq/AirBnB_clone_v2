@@ -23,7 +23,7 @@ def city_by_states(id):
     states = [v.to_dict() for v in storage.all(State).values()]
     if id:
         for obj in states:
-            
+            if obj['id'] == id:
     my_states = sorted(states, key=lambda x: x['name'])
     return render_template('9-states.html', states_list=my_states)
     
