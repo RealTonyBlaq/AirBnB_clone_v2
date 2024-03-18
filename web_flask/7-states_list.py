@@ -20,7 +20,8 @@ def all_states():
     """ Returns a list of state objects """
     states = storage.all(State)
     state_list = [v.to_dict() for v in states.values()]
-    render = render_template('7-states_list.html', state_list=state_list)
+    sorted_list = sorted(state_list, key=lambda x: x['name']) 
+    render = render_template('7-states_list.html', state_list=sorted_list)
     return render
 
 
