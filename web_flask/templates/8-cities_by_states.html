@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>States</H1>
+        {% for item in a_list %}
+        <UL>{{ item['state_id'] }}: <B>{{ item['state_name'] }}</B>
+                {% for city in item['cities'] %}
+                <LI>{{ city['id'] }}: <B>{{ city['name'] }}</B></LI>
+                {% endfor %}
+        </UL>
+        {% endfor %}
+    </BODY>
+</HTML>
