@@ -11,7 +11,7 @@
             <LI>{{ item['state_id'] }}: <B>{{ item['state_name'] }}</B> </LI>
             {% endfor %}
         </UL>
-        { % else % }
+        {% else %}
         <H1>State: {{ my_states['state_name']}}</H1>
         <H3>Cities:</H3>
         <UL>
