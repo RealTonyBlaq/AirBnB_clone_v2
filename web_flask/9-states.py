@@ -16,7 +16,7 @@ def teardown(error=None):
     storage.close()
 
 
-@app.route('/cities_by_states', strict_slashes=False)
+@app.route('/cities', strict_slashes=False)
 def all_states():
     """ Returns a rendered list of cities by state objects """
     
