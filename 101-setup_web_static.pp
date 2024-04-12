@@ -35,6 +35,8 @@ file {'/data/':
     require => Exec['make_rel', 'make_shared']
 }
 
+exec {'serve}
+
 service {'nginx':
     ensure  => 'running',
     require => Package['nginx']
