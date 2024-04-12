@@ -18,7 +18,7 @@ file {'/data/web_static/releases/test/index.html':
     ensure  => 'present',
     mode    => '0644',
     content => 'Testing my Nginx configuration',
-    require => Exec[]
+    require => Exec['make_rel']
 }
 
 file {'/data/':
