@@ -4,11 +4,14 @@ package {'nginx':
     ensure => 'installed'
 }
 
+
+
 file {'/data':
-    ensure => 'directory',
-    owner  => 'ubuntu',
-    group  => 'ubuntu',
-    
+    ensure  => 'directory',
+    owner   => 'ubuntu',
+    group   => 'ubuntu',
+    recurse => true,
+    require =>
 }
 
 service {'nginx':
