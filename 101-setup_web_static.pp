@@ -4,7 +4,10 @@ package {'nginx':
     ensure => 'installed'
 }
 
-file {'/data'}
+file {'/data':
+    ensure => 'directory',
+    owner  => 
+}
 
 service {'nginx':
     ensure  => 'running',
