@@ -5,7 +5,8 @@ package {'nginx':
 }
 
 
+
 service {'nginx':
-    ensure => 'running',
-    require 
+    ensure  => 'running',
+    require => Package['nginx']
 }
