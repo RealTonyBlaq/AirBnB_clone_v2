@@ -14,7 +14,7 @@ exec {'make_shared':
     path    => '/usr/bin/'
 }
 
-file {'/data':
+file {'/data/':
     ensure  => 'directory',
     owner   => 'ubuntu',
     group   => 'ubuntu',
