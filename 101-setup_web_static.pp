@@ -10,6 +10,8 @@ exec {'make_rel':
 }
 
 exec {'make_shared':
+    command => 'mkdir -p /data/web_static/shared/',
+    path    => '/usr/bin/'
 }
 
 file {'/data':
@@ -17,7 +19,7 @@ file {'/data':
     owner   => 'ubuntu',
     group   => 'ubuntu',
     recurse => true,
-    require =>
+    require => 
 }
 
 service {'nginx':
