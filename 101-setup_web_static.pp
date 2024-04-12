@@ -6,8 +6,10 @@ package {'nginx':
 
 exec {'make_dirs':
     command => 'mkdir -p /data/web_static/releases/',
-    path    => '/usr/bin/mkdir'
+    path    => '/usr/bin/'
 }
+
+exec {}
 
 file {'/data':
     ensure  => 'directory',
