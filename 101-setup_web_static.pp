@@ -21,6 +21,8 @@ file {'/data/web_static/releases/test/index.html':
     require => Exec['make_rel']
 }
 
+exec {'link'}
+
 file {'/data/':
     ensure  => 'directory',
     owner   => 'ubuntu',
