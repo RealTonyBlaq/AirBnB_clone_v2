@@ -35,7 +35,9 @@ file {'/data/':
     require => Exec['make_rel', 'make_shared']
 }
 
-exec {'serve}
+exec {'serve_static':
+    command => 'sed -i "48i\        location /hbnb_static {        alias /data/web_static/current/;}" /etc/nginx/sites-available/default'
+}
 
 service {'nginx':
     ensure  => 'running',
