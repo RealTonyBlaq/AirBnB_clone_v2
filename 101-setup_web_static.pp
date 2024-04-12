@@ -5,8 +5,8 @@ package {'nginx':
 }
 
 exec {'make_dirs':
-    command => 'mkdir -p /data/web_static/releases/'
-    path    => '
+    command => 'mkdir -p /data/web_static/releases/',
+    path    => '/usr/bin/mkdir'
 }
 
 file {'/data':
