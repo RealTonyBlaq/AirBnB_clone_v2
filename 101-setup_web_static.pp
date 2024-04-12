@@ -21,7 +21,10 @@ file {'/data/web_static/releases/test/index.html':
     require => Exec['make_rel']
 }
 
-exec {'link'}
+exec {'sym_link':
+    command => 'ln -s /data/web_static/releases/test/ /data/web_static/current',
+    path    => '/usr/bin/'
+}
 
 file {'/data/':
     ensure  => 'directory',
