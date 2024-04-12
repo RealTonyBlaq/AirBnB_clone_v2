@@ -15,7 +15,9 @@ exec {'make_shared':
 }
 
 file {'/data/web_static/releases/test/index.html':
-    ensure => 'present
+    ensure => 'present',
+    mode => '0644',
+    content => '
 }
 
 file {'/data/':
