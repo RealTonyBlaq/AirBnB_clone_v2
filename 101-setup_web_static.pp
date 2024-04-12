@@ -21,9 +21,9 @@ file {'/data/web_static/releases/test/index.html':
     require => Exec['make_rel']
 }
 
-file {'/data/web_static/current':
-    ensure  => 'link',
-    target  => '/data/web_static/releases/test/',
+exec {'sym_link':
+    command => 'ln -s /data/web_static/releases/test/ /data/web_static/current',
+    path    => '/usr/bin/',
     require => Exec['make_rel']
 }
 
@@ -32,7 +32,7 @@ file {'/data/':
     owner   => 'ubuntu',
     group   => 'ubuntu',
     recurse => true,
-    require => [Exec['make_rel'], Exec['make_shared']]
+    require => Exec['make_rel', 'make_shared']
 }
 
 exec {'serve_static':
