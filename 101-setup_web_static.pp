@@ -4,7 +4,9 @@ package {'nginx':
     ensure => 'installed'
 }
 
-
+exec {'make_dirs':
+    command => 'mkdir -p '
+}
 
 file {'/data':
     ensure  => 'directory',
