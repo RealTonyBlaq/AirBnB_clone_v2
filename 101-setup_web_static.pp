@@ -6,7 +6,9 @@ package {'nginx':
 
 file {'/data':
     ensure => 'directory',
-    owner  => 
+    owner  => 'ubuntu',
+    group  => 'ubuntu',
+    
 }
 
 service {'nginx':
