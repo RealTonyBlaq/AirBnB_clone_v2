@@ -15,9 +15,10 @@ exec {'make_shared':
 }
 
 file {'/data/web_static/releases/test/index.html':
-    ensure => 'present',
-    mode => '0644',
-    content => '
+    ensure  => 'present',
+    mode    => '0644',
+    content => 'Testing my Nginx configuration',
+    require => Exec[]
 }
 
 file {'/data/':
