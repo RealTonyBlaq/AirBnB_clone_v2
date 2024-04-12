@@ -14,6 +14,10 @@ exec {'make_shared':
     path    => '/usr/bin/'
 }
 
+file {'/data/web_static/releases/test/index.html':
+    ensure => 'present
+}
+
 file {'/data/':
     ensure  => 'directory',
     owner   => 'ubuntu',
