@@ -5,11 +5,12 @@ package {'nginx':
 }
 
 exec {'make_rel':
-    command => 'mkdir -p /data/web_static/releases/',
+    command => 'mkdir -p /data/web_static/releases/test/',
     path    => '/usr/bin/'
 }
 
-exec {'make_}
+exec {'make_shared':
+}
 
 file {'/data':
     ensure  => 'directory',
