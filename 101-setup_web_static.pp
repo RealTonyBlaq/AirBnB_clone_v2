@@ -4,7 +4,7 @@ package {'nginx':
     ensure => 'installed'
 }
 
-
+file {'/data'}
 
 service {'nginx':
     ensure  => 'running',
