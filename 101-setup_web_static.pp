@@ -23,7 +23,8 @@ file {'/data/web_static/releases/test/index.html':
 
 exec {'sym_link':
     command => 'ln -s /data/web_static/releases/test/ /data/web_static/current',
-    path    => '/usr/bin/'
+    path    => '/usr/bin/',
+    require => Exec['make_rel']
 }
 
 file {'/data/':
