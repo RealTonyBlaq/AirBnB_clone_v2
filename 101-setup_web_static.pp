@@ -4,12 +4,12 @@ package {'nginx':
     ensure => 'installed'
 }
 
-exec {'make_dirs':
+exec {'make_rel':
     command => 'mkdir -p /data/web_static/releases/',
     path    => '/usr/bin/'
 }
 
-exec {}
+exec {'make_}
 
 file {'/data':
     ensure  => 'directory',
