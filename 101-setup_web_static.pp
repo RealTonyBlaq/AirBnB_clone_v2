@@ -36,7 +36,9 @@ file {'/data/':
 }
 
 exec {'serve_static':
-    command => 'sed -i "48i\        location /hbnb_static {        alias /data/web_static/current/;}" /etc/nginx/sites-available/default'
+    command => 'sed -i "48i\        location /hbnb_static {        alias /data/web_static/current/;}" /etc/nginx/sites-available/default',
+    path    => '/usr/bin/',
+    require =>
 }
 
 service {'nginx':
