@@ -19,7 +19,7 @@ file {'/data':
     owner   => 'ubuntu',
     group   => 'ubuntu',
     recurse => true,
-    require => 
+    require => Exec['make_rel', 'make_shared']
 }
 
 service {'nginx':
